@@ -3,311 +3,545 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VarmeGuiden – Beste Varmepumpe 2026 | Uavhengig Test og Guide</title>
-  <meta name="description" content="VarmeGuiden er Norges uavhengige guide til varmepumper, hyttevarme og strømsparing. Vi tester og sammenligner produkter i ekte norske forhold.">
+
+  <!-- SEO -->
+  <title>VarmeGuiden – Beste Varmepumpe 2026 | Uavhengig Guide for Norge</title>
+  <meta name="description" content="VarmeGuiden er Norges uavhengige guide til varmepumper og oppvarming. Finn den beste løsningen for ditt hjem eller hytte — med ærlige råd, priser og ENOVA-informasjon.">
   <link rel="canonical" href="https://varmeguiden.com/">
-  <meta property="og:title" content="VarmeGuiden – Beste Varmepumpe 2026">
-  <meta property="og:description" content="Norges uavhengige guide til varmepumper og oppvarming.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="VarmeGuiden – Beste Varmepumpe 2026 | Uavhengig Guide">
+  <meta property="og:description" content="Norges uavhengige guide til varmepumper, hyttevarme og strømsparing. Ærlige råd, priser og ENOVA-informasjon.">
   <meta property="og:url" content="https://varmeguiden.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="nb_NO">
+  <meta property="og:image" content="https://varmeguiden.com/img/og-forsiden.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VarmeGuiden – Beste Varmepumpe 2026">
+  <meta name="twitter:description" content="Norges uavhengige guide til varmepumper og oppvarming.">
+
+  <!-- Hreflang -->
   <link rel="alternate" hreflang="nb" href="https://varmeguiden.com/">
+  <link rel="alternate" hreflang="x-default" href="https://varmeguiden.com/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="/css/main.css">
+
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.hvakosterstrommen.no">
+
+  <!-- Schema: WebSite -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebSite","name":"VarmeGuiden","url":"https://varmeguiden.com","description":"Norges uavhengige guide til varmepumper, hyttevarme og energiløsninger","potentialAction":{"@type":"SearchAction","target":"https://varmeguiden.com/søk/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VarmeGuiden",
+    "url": "https://varmeguiden.com",
+    "description": "Norges uavhengige guide til varmepumper, hyttevarme og energiløsninger",
+    "inLanguage": "nb",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://varmeguiden.com/søk/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Schema: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VarmeGuiden",
+    "url": "https://varmeguiden.com",
+    "logo": "https://varmeguiden.com/img/logo.svg",
+    "description": "Uavhengig norsk guide til varmepumper og energiløsninger",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "kontakt@varmeguiden.com"
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Hvilken varmepumpe er best for norsk klima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For norske forhold anbefaler mange eksperter Mitsubishi Electric MSZ-AP-serien og Daikin Ururu Sarara. Disse fungerer effektivt ned til −25°C og −30°C, noe som er viktig i et norsk klima. COP-verdien (energieffektiviteten) bør være over 3,5 for å gi god økonomi."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan jeg få ENOVA-støtte til varmepumpe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, ENOVA gir tilskudd til installasjon av varmepumpe i eksisterende boliger. Støttebeløpet og kravene oppdateres jevnlig på ENOVAs hjemmeside (enova.no). Du trenger godkjent installatør og søker etter at arbeidet er utført."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hva koster installasjon av varmepumpe i Norge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Totalkostnaden for en luft til luft varmepumpe i Norge ligger typisk mellom 15 000 og 30 000 kr inkludert installasjon. Selve produktet koster 8 000–18 000 kr, mens installasjon koster 5 000–12 000 kr avhengig av kompleksiteten."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Lønner det seg med varmepumpe i Norge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For de fleste norske hjem lønner det seg å installere varmepumpe. En typisk familie kan spare betydelig på strømregningen sammenlignet med panelovner. Tilbakebetalingstiden avhenger av strømpris, boligstørrelse og klimasone."
+        }
+      }
+    ]
+  }
   </script>
 </head>
+
 <body>
 
-<div class="topbar">
+<!-- Topbar -->
+<div class="topbar" role="banner">
   <div class="topbar-strom">
-    <span>⚡</span>
-    <span>Strømpris nå (NO1): <strong id="topbar-pris" class="strom-pris">laster...</strong></span>
-    <span style="color:rgba(255,255,255,0.2)">|</span>
-    <span>Spar mer med riktig varmepumpe</span>
+    <span aria-hidden="true">⚡</span>
+    <span>Strømpris nå (NO1): <strong class="strom-pris" aria-live="polite">laster...</strong></span>
+    <span aria-hidden="true" style="color:rgba(255,255,255,0.2)">|</span>
+    <span>Spar mer med riktig oppvarming</span>
   </div>
-  <nav class="topbar-nav">
-    <a href="/enova/tilskudd/">ENOVA 2026</a>
-    <a href="/kalkulatorer/">Kalkulatorer</a>
+  <nav class="topbar-nav" aria-label="Sekundær navigasjon">
+    <a href="/enova/">ENOVA støtte</a>
     <a href="/om/">Om oss</a>
     <a href="/kontakt/">Kontakt</a>
   </nav>
 </div>
 
-<div id="site-header"></div>
+<!-- Header — inline for Google -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="VarmeGuiden — tilbake til forsiden">
+      <div class="logo-ikon" aria-hidden="true">🔥</div>
+      <div class="logo-navn">Varme<em>Guiden</em></div>
+    </a>
+    <nav class="hoved-nav" aria-label="Hovednavigasjon">
+      <a href="/varmepumpe/">Varmepumper</a>
+      <a href="/hyttevarme/">Hyttevarme</a>
+      <a href="/stromsparing/">Strøm & ENOVA</a>
+      <a href="/vedovn/">Vedovner</a>
+      <a href="/om-oss/" class="nav-cta">Om VarmeGuiden</a>
+    </nav>
+    <button class="hamburger" aria-label="Åpne navigasjonsmeny" aria-expanded="false" aria-controls="mobil-meny">☰</button>
+  </div>
+</header>
 
-<section class="hero">
+<!-- Mobil meny -->
+<div class="mobil-meny-overlay" aria-hidden="true"></div>
+<nav class="mobil-meny" id="mobil-meny" aria-label="Mobilnavigasjon">
+  <button class="mobil-meny-lukk" aria-label="Lukk navigasjonsmeny">✕</button>
+  <a href="/varmepumpe/">Varmepumper</a>
+  <a href="/hyttevarme/">Hyttevarme</a>
+  <a href="/stromsparing/">Strøm & ENOVA</a>
+  <a href="/vedovn/">Vedovner</a>
+  <a href="/enova/">ENOVA støtte</a>
+  <a href="/om/">Om oss</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/om-oss/" class="nav-cta">Om VarmeGuiden</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-overskrift">
   <div class="hero-inner">
     <div class="hero-tekst">
-      <div class="hero-etikett">✓ Uavhengige tester siden 2024</div>
-      <h1>Finn den beste varmepumpen for ditt norske hjem</h1>
-      <p class="hero-ingress">Vi tester og sammenligner varmepumper, vedovner og oppvarmingsløsninger i ekte norsk vinterklima — ned til −25°C. Få uavhengige råd og spar tusenvis av kroner.</p>
+      <div class="hero-etikett" aria-hidden="true">✓ Uavhengig norsk guide</div>
+      <h1 id="hero-overskrift">Finn den beste varmepumpen for ditt norske hjem</h1>
+      <p class="hero-ingress">Vi samler og presenterer informasjon om varmepumper, vedovner og oppvarmingsløsninger tilpasset norske forhold — ned til −25°C. Finn riktig løsning for ditt hjem eller hytte.</p>
       <div class="tillit-rad">
         <div class="tillit-punkt">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>47+ produkter testet</span>
+          <span>Norskspråklig informasjon</span>
         </div>
         <div class="tillit-punkt">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Oppdatert januar 2026</span>
+          <span>Tilpasset norsk klima</span>
         </div>
         <div class="tillit-punkt">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>100% uavhengig redaksjon</span>
+          <span>Uavhengig redaksjon</span>
         </div>
       </div>
       <div class="hero-knapper">
-        <a href="/varmepumpe/beste-varmepumpe/" class="knapp knapp-primær knapp-lg">Se beste varmepumpe 2026 →</a>
-        <a href="/kalkulatorer/strom/" class="knapp knapp-sekundær knapp-lg">Beregn strømsparing</a>
+        <a href="/varmepumpe/" class="knapp knapp-primær knapp-lg">Utforsk varmepumper →</a>
+        <a href="/enova/" class="knapp knapp-sekundær knapp-lg">ENOVA støtte 2026</a>
       </div>
     </div>
-    <aside class="vinner-kort">
-      <div class="vinner-badge">🏆 Testvinner 2026</div>
-      <img src="/img/mitsubishi-msz-ap.webp" alt="Mitsubishi Electric MSZ-AP varmepumpe" width="280" height="160" loading="eager" style="width:100%;height:160px;object-fit:contain;background:var(--grå-lys);border-radius:var(--radius);margin-bottom:14px;padding:16px">
-      <div class="vinner-navn">Mitsubishi Electric MSZ-AP25VGK</div>
-      <div class="vinner-meta">Luft til luft · 20–35 kvm · Støy: 19 dB · COP: 4,2</div>
+
+    <aside class="vinner-kort" aria-label="Fremhevet varmepumpe">
+      <div class="vinner-badge">🏆 Populært valg i Norge</div>
+      <div class="vinner-bilde" role="img" aria-label="Mitsubishi Electric varmepumpe illustrasjon">💨</div>
+      <div class="vinner-navn">Mitsubishi Electric MSZ-AP-serien</div>
+      <div class="vinner-meta">Luft til luft · Fungerer ned til −25°C · Lav støy</div>
       <div class="vinner-score">
-        <div class="score-tall">9,4</div>
+        <div class="score-tall">4,2</div>
         <div>
-          <div class="score-stjerner">★★★★★</div>
-          <div class="score-label">av 10 — ekspertkarakter</div>
+          <div class="score-stjerner" aria-label="4,2 av 5 stjerner">★★★★☆</div>
+          <div class="score-label">COP-verdi — energieffektivitet</div>
         </div>
       </div>
-      <a href="/varmepumpe/beste-varmepumpe/" class="knapp knapp-grønn knapp-full">Les vår fullstendige test →</a>
+      <a href="/varmepumpe/" class="knapp knapp-grønn knapp-full">Les mer om varmepumper →</a>
     </aside>
   </div>
 </section>
 
-<div class="søk-wrapper">
+<!-- Søk -->
+<div class="søk-wrapper" role="search">
   <div class="søk-rad">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b7a6d" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input class="søk-input" type="search" placeholder="Søk etter varmepumpe, hytte, strømsparing..." aria-label="Søk på VarmeGuiden" onkeydown="if(event.key==='Enter') søk(this.value)">
-    <button class="knapp knapp-grønn" onclick="søk(document.querySelector('.søk-input').value)">Søk</button>
+    <input
+      class="søk-input"
+      type="search"
+      placeholder="Søk etter varmepumpe, hytte, strøm..."
+      aria-label="Søk på VarmeGuiden"
+      onkeydown="if(event.key==='Enter') søk(this.value)"
+    >
+    <button class="knapp knapp-grønn" onclick="søk(document.querySelector('.søk-input').value)" aria-label="Søk">Søk</button>
   </div>
-  <div class="søk-tags">
-    <a href="/varmepumpe/beste-varmepumpe/" class="søk-tag">beste varmepumpe</a>
-    <a href="/hyttevarme/varmepumpe-hytte/" class="søk-tag">varmepumpe hytte</a>
-    <a href="/enova/tilskudd/" class="søk-tag">ENOVA støtte</a>
-    <a href="/stromsparing/" class="søk-tag">strømsparing tips</a>
-    <a href="/vedovn/beste-vedovn/" class="søk-tag">beste vedovn</a>
+  <div class="søk-tags" aria-label="Populære emner">
+    <a href="/varmepumpe/" class="søk-tag">varmepumpe</a>
+    <a href="/hyttevarme/" class="søk-tag">hyttevarme</a>
+    <a href="/enova/" class="søk-tag">ENOVA støtte</a>
+    <a href="/stromsparing/" class="søk-tag">strømsparing</a>
+    <a href="/vedovn/" class="søk-tag">vedovn</a>
     <a href="/varmepumpe/luft-til-vann/" class="søk-tag">luft til vann</a>
   </div>
 </div>
 
+<!-- Hoved layout -->
 <div class="side-layout">
-  <main class="hoved-innhold">
 
-    <section class="seksjon">
+  <main class="hoved-innhold" id="hoved-innhold">
+
+    <!-- Temaer -->
+    <section class="seksjon" aria-labelledby="kategorier-tittel">
       <div class="seksjon-header">
-        <h2 class="seksjon-tittel">Siste tester og guider</h2>
-        <a href="/alle-artikler/" class="seksjon-lenke">Se alle →</a>
+        <h2 class="seksjon-tittel" id="kategorier-tittel">Hva leter du etter?</h2>
       </div>
-      <a href="/varmepumpe/beste-varmepumpe/" class="fremhevet-kort">
-        <div class="fremhevet-bilde">🏆</div>
-        <div class="fremhevet-innhold">
-          <div class="kort-kategori">Varmepumpe test</div>
-          <div class="kort-tittel" style="font-size:1.2rem">Beste varmepumpe 2026 – Vi har testet 18 modeller</div>
-          <p class="fremhevet-ingress">Mitsubishi Electric topper vår test for tredje år på rad. Vi har testet 18 modeller i ekte norsk vinterklima ned til −25°C.</p>
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-            <span class="karakter-pill">★ 9,4/10 — Mitsubishi MSZ-AP</span>
-            <span class="kort-meta">15 min lesing · Januar 2026</span>
-          </div>
-        </div>
-      </a>
-      <div class="kort-grid" style="margin-top:16px">
-        <a href="/hyttevarme/beste-varmepumpe-hytte/" class="artikkel-kort">
-          <div class="kort-bilde-placeholder">🏕️</div>
-          <div class="kort-innhold">
-            <div class="kort-kategori">Hyttevarme</div>
-            <div class="kort-tittel">Beste varmepumpe til hytte 2026</div>
-            <div class="kort-meta"><span class="karakter-pill">★ 9,1/10</span><span>7 modeller testet</span></div>
-          </div>
-        </a>
-        <a href="/vedovn/beste-vedovn/" class="artikkel-kort">
-          <div class="kort-bilde-placeholder">🔥</div>
-          <div class="kort-innhold">
-            <div class="kort-kategori">Vedovner</div>
-            <div class="kort-tittel">Beste vedovn 2026 – Jøtul vs Morso</div>
-            <div class="kort-meta"><span class="karakter-pill">★ 9,0/10</span><span>8 modeller testet</span></div>
-          </div>
-        </a>
-        <a href="/stromsparing/tips/" class="artikkel-kort">
-          <div class="kort-bilde-placeholder">⚡</div>
-          <div class="kort-innhold">
-            <div class="kort-kategori">Strøm</div>
-            <div class="kort-tittel">12 konkrete tips for å spare strøm i vinter</div>
-            <div class="kort-meta"><span>8 min lesing</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="seksjon">
-      <div class="seksjon-header">
-        <h2 class="seksjon-tittel">Beste varmepumper 2026 — rangert</h2>
-        <a href="/varmepumpe/beste-varmepumpe/" class="seksjon-lenke">Full test →</a>
-      </div>
-      <div class="rangert-liste">
-        <a href="/varmepumpe/mitsubishi/" class="rangert-element">
-          <div class="rang-tall gull">1</div>
-          <div class="rang-info">
-            <div class="rang-kategori">Luft til luft</div>
-            <div class="rang-navn">Mitsubishi Electric MSZ-AP — Best i test</div>
-            <div class="rang-detalj">Fra 11 990 kr · Med installasjon fra 18 500 kr · COP 4,2</div>
-          </div>
-          <div class="rang-score">9,4/10</div>
-        </a>
-        <a href="/varmepumpe/daikin/" class="rangert-element">
-          <div class="rang-tall sølv">2</div>
-          <div class="rang-info">
-            <div class="rang-kategori">Luft til luft</div>
-            <div class="rang-navn">Daikin Ururu Sarara — Best på kulde</div>
-            <div class="rang-detalj">Fra 14 990 kr · Fungerer ned til −30°C</div>
-          </div>
-          <div class="rang-score">9,1/10</div>
-        </a>
-        <a href="/varmepumpe/panasonic/" class="rangert-element">
-          <div class="rang-tall bronse">3</div>
-          <div class="rang-info">
-            <div class="rang-kategori">Luft til luft</div>
-            <div class="rang-navn">Panasonic Etherea — Best verdi</div>
-            <div class="rang-detalj">Fra 9 490 kr · Anbefalt for de fleste norske hjem</div>
-          </div>
-          <div class="rang-score">8,8/10</div>
-        </a>
-        <a href="/varmepumpe/samsung/" class="rangert-element">
-          <div class="rang-tall">4</div>
-          <div class="rang-info">
-            <div class="rang-kategori">Luft til luft</div>
-            <div class="rang-navn">Samsung Wind-Free — Stillegående</div>
-            <div class="rang-detalj">Fra 10 490 kr · 16 dB — nesten lydløs</div>
-          </div>
-          <div class="rang-score">8,6/10</div>
-        </a>
-        <a href="/varmepumpe/beste-varmepumpe/" class="rangert-element" style="justify-content:center;color:var(--grønn-mid);font-size:14px;font-weight:600">
-          Se alle 18 modeller i testen →
-        </a>
-      </div>
-    </section>
-
-    <div class="enova-banner">
-      <div class="enova-tekst">
-        <h3>Få ENOVA-støtte til varmepumpe</h3>
-        <div class="enova-beløp">Opptil 10 000 kr</div>
-        <div class="enova-beløp-label">i statlig tilskudd i 2026</div>
-        <p>Staten gir penger til energieffektive oppvarmingsløsninger. Sjekk om du har krav på støtte.</p>
-      </div>
-      <a href="/enova/tilskudd/" class="knapp knapp-lg" style="background:#a8e6c3;color:#0a3d1f;flex-shrink:0">Sjekk din støtte →</a>
-    </div>
-
-    <section class="seksjon">
-      <div class="seksjon-header">
-        <h2 class="seksjon-tittel">Utforsk alle kategorier</h2>
-      </div>
-      <nav class="kategorier-grid">
+      <nav class="kategorier-grid" aria-label="Kategorier">
         <a href="/varmepumpe/" class="kategori-kort">
-          <div class="kategori-ikon">💨</div>
+          <div class="kategori-ikon" aria-hidden="true">💨</div>
           <div class="kategori-navn">Varmepumper</div>
-          <div class="kategori-antall">48 guider</div>
         </a>
         <a href="/hyttevarme/" class="kategori-kort">
-          <div class="kategori-ikon">🏕️</div>
+          <div class="kategori-ikon" aria-hidden="true">🏕️</div>
           <div class="kategori-navn">Hyttevarme</div>
-          <div class="kategori-antall">24 guider</div>
         </a>
         <a href="/stromsparing/" class="kategori-kort">
-          <div class="kategori-ikon">⚡</div>
+          <div class="kategori-ikon" aria-hidden="true">⚡</div>
           <div class="kategori-navn">Strøm & ENOVA</div>
-          <div class="kategori-antall">31 guider</div>
         </a>
         <a href="/vedovn/" class="kategori-kort">
-          <div class="kategori-ikon">🔥</div>
+          <div class="kategori-ikon" aria-hidden="true">🔥</div>
           <div class="kategori-navn">Vedovner</div>
-          <div class="kategori-antall">19 guider</div>
         </a>
         <a href="/gulvvarme/" class="kategori-kort">
-          <div class="kategori-ikon">🌡️</div>
+          <div class="kategori-ikon" aria-hidden="true">🌡️</div>
           <div class="kategori-navn">Gulvvarme</div>
-          <div class="kategori-antall">15 guider</div>
         </a>
         <a href="/isolasjon/" class="kategori-kort">
-          <div class="kategori-ikon">🏠</div>
+          <div class="kategori-ikon" aria-hidden="true">🏠</div>
           <div class="kategori-navn">Isolasjon</div>
-          <div class="kategori-antall">12 guider</div>
         </a>
       </nav>
     </section>
 
-    <section class="faq-seksjon">
-      <h2>Vanlige spørsmål om varmepumper</h2>
-      <div class="faq-element">
-        <button class="faq-spørsmål">Hvilken varmepumpe er best for norsk klima?<span class="faq-pil">▼</span></button>
-        <div class="faq-svar"><p>For norske forhold anbefaler vi Mitsubishi Electric MSZ-AP-serien. Den fungerer effektivt ned til −25°C og har en COP på 4,2 — det betyr at du får 4,2 kW varme for hver kW strøm du bruker. Daikin Ururu Sarara er også utmerket om du bor i et område med svært kalde vintre, da den fungerer ned til −30°C.</p></div>
+    <!-- Varmepumpe guide -->
+    <section class="seksjon" aria-labelledby="varmepumpe-tittel">
+      <div class="seksjon-header">
+        <h2 class="seksjon-tittel" id="varmepumpe-tittel">Om varmepumper i Norge</h2>
+        <a href="/varmepumpe/" class="seksjon-lenke">Les mer →</a>
       </div>
-      <div class="faq-element">
-        <button class="faq-spørsmål">Kan jeg få ENOVA-støtte til varmepumpe?<span class="faq-pil">▼</span></button>
-        <div class="faq-svar"><p>Ja! ENOVA gir i 2026 opptil 10 000 kr i støtte til installasjon av varmepumpe i eksisterende boliger. For å kvalifisere må du ha en godkjent installatør, og boligen din kan ikke være nyere enn 2010. Søknaden sendes inn på ENOVAs hjemmeside etter at arbeidet er utført.</p></div>
+
+      <a href="/varmepumpe/" class="fremhevet-kort">
+        <div class="fremhevet-bilde" aria-hidden="true">💨</div>
+        <div class="fremhevet-innhold">
+          <div class="kort-kategori">Varmepumpe guide</div>
+          <div class="fremhevet-tittel">Alt om varmepumper — tilpasset norske forhold</div>
+          <p class="fremhevet-ingress">Varmepumpe er i dag den mest populære oppvarmingsformen i norske hjem. Vi forklarer hvordan de fungerer, hva de koster og hva du bør tenke på før du kjøper.</p>
+          <div class="kort-meta">
+            <span>Luft til luft · Luft til vann · Bergvarme</span>
+          </div>
+        </div>
+      </a>
+
+      <div class="kort-grid" style="margin-top:16px">
+        <a href="/hyttevarme/" class="artikkel-kort">
+          <div class="kort-bilde-placeholder" aria-hidden="true">🏕️</div>
+          <div class="kort-innhold">
+            <div class="kort-kategori">Hyttevarme</div>
+            <div class="kort-tittel">Oppvarming av hytte — hva passer best?</div>
+            <div class="kort-meta"><span>Varmepumpe · Vedovn · Propan</span></div>
+          </div>
+        </a>
+        <a href="/enova/" class="artikkel-kort">
+          <div class="kort-bilde-placeholder" aria-hidden="true">💰</div>
+          <div class="kort-innhold">
+            <div class="kort-kategori">ENOVA støtte</div>
+            <div class="kort-tittel">Slik søker du ENOVA-tilskudd i 2026</div>
+            <div class="kort-meta"><span>Statlig støtte til energitiltak</span></div>
+          </div>
+        </a>
+        <a href="/stromsparing/" class="artikkel-kort">
+          <div class="kort-bilde-placeholder" aria-hidden="true">⚡</div>
+          <div class="kort-innhold">
+            <div class="kort-kategori">Strømsparing</div>
+            <div class="kort-tittel">Spar strøm i vinter — praktiske tips</div>
+            <div class="kort-meta"><span>Konkrete råd for norske hjem</span></div>
+          </div>
+        </a>
       </div>
-      <div class="faq-element">
-        <button class="faq-spørsmål">Hva koster installasjon av varmepumpe i Norge?<span class="faq-pil">▼</span></button>
-        <div class="faq-svar"><p>Totalkostnaden for en luft til luft varmepumpe i Norge ligger typisk mellom 15 000 og 30 000 kr inkludert installasjon. Selve produktet koster 8 000–18 000 kr, mens installasjon koster 5 000–12 000 kr. Med ENOVA-støtte på opptil 10 000 kr kan du redusere kostnaden betydelig.</p></div>
+    </section>
+
+    <!-- Populære merker -->
+    <section class="seksjon" aria-labelledby="merker-tittel">
+      <div class="seksjon-header">
+        <h2 class="seksjon-tittel" id="merker-tittel">Populære varmepumpemerker i Norge</h2>
+        <a href="/varmepumpe/" class="seksjon-lenke">Se alle →</a>
       </div>
+      <div class="rangert-liste">
+        <a href="/varmepumpe/mitsubishi/" class="rangert-element">
+          <div class="rang-tall gull" aria-label="Nummer 1">1</div>
+          <div class="rang-info">
+            <div class="rang-kategori">Luft til luft</div>
+            <div class="rang-navn">Mitsubishi Electric</div>
+            <div class="rang-detalj">MSZ-AP og MSZ-LN serien · Kjent for pålitelighet og kuldeytelse</div>
+          </div>
+          <div class="rang-score">Populær</div>
+        </a>
+        <a href="/varmepumpe/daikin/" class="rangert-element">
+          <div class="rang-tall sølv" aria-label="Nummer 2">2</div>
+          <div class="rang-info">
+            <div class="rang-kategori">Luft til luft</div>
+            <div class="rang-navn">Daikin</div>
+            <div class="rang-detalj">Ururu Sarara og Comfora serien · Fungerer ned til −30°C</div>
+          </div>
+          <div class="rang-score">Populær</div>
+        </a>
+        <a href="/varmepumpe/panasonic/" class="rangert-element">
+          <div class="rang-tall bronse" aria-label="Nummer 3">3</div>
+          <div class="rang-info">
+            <div class="rang-kategori">Luft til luft</div>
+            <div class="rang-navn">Panasonic</div>
+            <div class="rang-detalj">Etherea og CS-Z serien · God verdi for pengene</div>
+          </div>
+          <div class="rang-score">Populær</div>
+        </a>
+        <a href="/varmepumpe/samsung/" class="rangert-element">
+          <div class="rang-tall" aria-label="Nummer 4">4</div>
+          <div class="rang-info">
+            <div class="rang-kategori">Luft til luft</div>
+            <div class="rang-navn">Samsung</div>
+            <div class="rang-detalj">Wind-Free serien · Kjent for stille drift</div>
+          </div>
+          <div class="rang-score">Populær</div>
+        </a>
+        <a href="/varmepumpe/" class="rangert-element rang-mer" aria-label="Se alle merker">
+          Se alle merker og modeller →
+        </a>
+      </div>
+    </section>
+
+    <!-- ENOVA banner -->
+    <div class="enova-banner" role="complementary" aria-label="ENOVA støtteinformasjon">
+      <div class="enova-tekst">
+        <h3>Få ENOVA-støtte til energitiltak</h3>
+        <div class="enova-beløp">Statlig tilskudd</div>
+        <div class="enova-beløp-label">til varmepumpe, isolasjon og mer</div>
+        <p>ENOVA gir penger til energieffektive løsninger i norske boliger. Sjekk hva du kan ha krav på.</p>
+      </div>
+      <a href="/enova/" class="enova-knapp">Les om ENOVA-støtte →</a>
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq-seksjon" aria-labelledby="faq-tittel">
+      <h2 id="faq-tittel">Vanlige spørsmål om varmepumper</h2>
+
       <div class="faq-element">
-        <button class="faq-spørsmål">Lønner det seg med varmepumpe i Norge?<span class="faq-pil">▼</span></button>
-        <div class="faq-svar"><p>Ja, absolutt. En typisk familie sparer 8 000–15 000 kr i strøm per år sammenlignet med panelovner. Tilbakebetalingstiden er gjerne 2–4 år — da er resten ren gevinst i varmepumpens levetid på 15–20 år.</p></div>
+        <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-1">
+          Hvilken varmepumpe er best for norsk klima?
+          <span class="faq-pil" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-svar" id="faq-1" role="region">
+          <p>For norske forhold trekker mange eksperter frem Mitsubishi Electric MSZ-AP-serien og Daikin Ururu Sarara som gode valg. Disse fungerer effektivt ned til −25°C og −30°C, noe som er viktig i et norsk klima. COP-verdien (energieffektiviteten) bør være over 3,5 for å gi god økonomi. Det viktigste er å velge en modell som er dimensjonert riktig for din bolig og ditt klimaområde.</p>
+        </div>
+      </div>
+
+      <div class="faq-element">
+        <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-2">
+          Kan jeg få ENOVA-støtte til varmepumpe?
+          <span class="faq-pil" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-svar" id="faq-2" role="region">
+          <p>Ja, ENOVA gir tilskudd til installasjon av varmepumpe i eksisterende boliger. Støttebeløpet og kravene oppdateres jevnlig — sjekk alltid gjeldende satser på <a href="https://enova.no" rel="noopener noreferrer" target="_blank">enova.no</a> for den nyeste informasjonen. Du trenger godkjent installatør og søker etter at arbeidet er utført. Tilskuddet gjelder ikke for nybygg.</p>
+        </div>
+      </div>
+
+      <div class="faq-element">
+        <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-3">
+          Hva koster installasjon av varmepumpe i Norge?
+          <span class="faq-pil" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-svar" id="faq-3" role="region">
+          <p>Totalkostnaden for en luft til luft varmepumpe i Norge ligger typisk mellom 15 000 og 30 000 kr inkludert installasjon. Selve produktet koster 8 000–18 000 kr, mens installasjonen koster 5 000–12 000 kr avhengig av kompleksiteten og hvor du bor. Prisene varierer mellom leverandører, så det lønner seg å innhente flere tilbud.</p>
+        </div>
+      </div>
+
+      <div class="faq-element">
+        <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-4">
+          Lønner det seg med varmepumpe i Norge?
+          <span class="faq-pil" aria-hidden="true">▼</span>
+        </button>
+        <div class="faq-svar" id="faq-4" role="region">
+          <p>For de fleste norske hjem lønner det seg å installere varmepumpe, særlig sammenlignet med panelovner som den primære varmekilde. En varmepumpe med COP på 3,5 bruker omtrent tre ganger mindre strøm enn en panelovn for å produsere like mye varme. Tilbakebetalingstiden avhenger av strømpris, boligstørrelse og klimasone, men er typisk 3–6 år.</p>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <aside class="sidebar">
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="Tilleggsinformasjon">
+
+    <!-- Kontakt / tilbud -->
     <div class="widget">
-      <div class="widget-header">📋 Få 3 gratis tilbud</div>
+      <div class="widget-header">📋 Finn installatør</div>
       <div class="widget-innhold">
+        <p style="font-size:13px;color:var(--tekst-sekundær);line-height:1.6;margin-bottom:14px">Ønsker du tilbud på varmepumpe? Vi anbefaler å kontakte flere lokale VVS-firmaer for å sammenligne priser.</p>
         <div class="lead-form">
-          <label for="produkt">Hva trenger du?</label>
-          <select id="produkt">
+          <label for="produkt-type">Hva trenger du?</label>
+          <select id="produkt-type" name="produkt-type">
             <option>Luft til luft varmepumpe</option>
             <option>Luft til vann varmepumpe</option>
             <option>Bergvarme</option>
             <option>Vedovn</option>
             <option>Gulvvarme</option>
           </select>
-          <label for="areal">Boligareal (kvm)</label>
-          <input type="number" id="areal" placeholder="F.eks. 80">
-          <label for="postnummer">Postnummer</label>
-          <input type="text" id="postnummer" placeholder="F.eks. 0150" maxlength="4">
         </div>
-        <a href="/tilbud/" class="knapp knapp-full" style="margin-top:14px;background:var(--oransje);color:white;display:flex;justify-content:center;align-items:center;padding:10px;border-radius:var(--radius);font-weight:600;font-size:14px">Få gratis tilbud →</a>
-        <p class="lead-disclaimer">Gratis og uforpliktende · 3 lokale installatører</p>
+        <a href="/kontakt/" class="knapp knapp-full" style="margin-top:14px;background:var(--oransje);color:white;display:flex;justify-content:center;align-items:center;padding:10px;border-radius:var(--radius);font-weight:600;font-size:14px;text-decoration:none">Kontakt oss →</a>
+        <p class="lead-disclaimer">Vi hjelper deg med å finne riktig løsning</p>
       </div>
     </div>
+
+    <!-- Populære merker -->
     <div class="widget">
-      <div class="widget-header">🏆 Beste merker 2026</div>
+      <div class="widget-header">🏆 Populære merker</div>
       <div class="widget-innhold">
-        <div class="toppliste-rad"><span class="toppliste-merke">1. Mitsubishi Electric</span><span class="toppliste-score">9,4/10</span></div>
-        <div class="toppliste-rad"><span class="toppliste-merke">2. Daikin</span><span class="toppliste-score">9,1/10</span></div>
-        <div class="toppliste-rad"><span class="toppliste-merke">3. Panasonic</span><span class="toppliste-score">8,8/10</span></div>
-        <div class="toppliste-rad"><span class="toppliste-merke">4. Samsung</span><span class="toppliste-score">8,6/10</span></div>
-        <div class="toppliste-rad"><span class="toppliste-merke">5. Fujitsu</span><span class="toppliste-score">8,3/10</span></div>
-        <a href="/varmepumpe/beste-varmepumpe/" class="knapp knapp-sekundær knapp-full" style="margin-top:14px;font-size:13px">Se full test →</a>
+        <div class="toppliste-rad">
+          <span class="toppliste-merke"><a href="/varmepumpe/mitsubishi/">Mitsubishi Electric</a></span>
+          <span class="toppliste-score">COP 4,2</span>
+        </div>
+        <div class="toppliste-rad">
+          <span class="toppliste-merke"><a href="/varmepumpe/daikin/">Daikin</a></span>
+          <span class="toppliste-score">COP 4,0</span>
+        </div>
+        <div class="toppliste-rad">
+          <span class="toppliste-merke"><a href="/varmepumpe/panasonic/">Panasonic</a></span>
+          <span class="toppliste-score">COP 3,8</span>
+        </div>
+        <div class="toppliste-rad">
+          <span class="toppliste-merke"><a href="/varmepumpe/samsung/">Samsung</a></span>
+          <span class="toppliste-score">COP 3,7</span>
+        </div>
+        <div class="toppliste-rad">
+          <span class="toppliste-merke"><a href="/varmepumpe/fujitsu/">Fujitsu</a></span>
+          <span class="toppliste-score">COP 3,6</span>
+        </div>
+        <p style="font-size:11px;color:var(--grå-tekst);margin-top:10px;line-height:1.5">COP-verdier er veiledende og varierer med utetemperatur og bruksforhold.</p>
       </div>
     </div>
+
+    <!-- Nyttige lenker -->
     <div class="widget">
-      <div class="widget-header">🔧 Nyttige verktøy</div>
+      <div class="widget-header">🔗 Nyttige ressurser</div>
       <div class="widget-innhold lenke-liste">
-        <a href="/kalkulatorer/strom/">Strømsparingskalkulator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        <a href="/enova/sjekk/">ENOVA-støtte sjekker <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        <a href="/kalkulatorer/størrelse/">Varmepumpe størrelse guide <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
-        <a href="/kalkulatorer/cop/">COP kalkulator <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+        <a href="/enova/">ENOVA støtteordninger
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="/varmepumpe/luft-til-luft/">Luft til luft guide
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="/varmepumpe/luft-til-vann/">Luft til vann guide
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="/hyttevarme/">Hyttevarme guide
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+        <a href="https://enova.no" target="_blank" rel="noopener noreferrer">ENOVA.no (offisiell side)
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
       </div>
     </div>
+
   </aside>
+
 </div>
 
-<div id="site-footer"></div>
+<!-- Footer — inline for Google -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-navn">Varme<em>Guiden</em></div>
+        <p class="footer-beskrivelse">Norges uavhengige guide til varmepumper, hyttevarme og energiløsninger. Vi presenterer informasjon uten reklamepress.</p>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Varmepumper</h4>
+        <a href="/varmepumpe/">Om varmepumper</a>
+        <a href="/varmepumpe/luft-til-luft/">Luft til luft</a>
+        <a href="/varmepumpe/luft-til-vann/">Luft til vann</a>
+        <a href="/varmepumpe/bergvarme/">Bergvarme</a>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Hyttevarme</h4>
+        <a href="/hyttevarme/">Hyttevarme guide</a>
+        <a href="/vedovn/">Vedovner</a>
+        <a href="/hyttevarme/off-grid/">Off-grid løsninger</a>
+        <a href="/gulvvarme/">Gulvvarme</a>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Informasjon</h4>
+        <a href="/enova/">ENOVA støtte</a>
+        <a href="/stromsparing/">Strømsparing</a>
+        <a href="/om/">Om VarmeGuiden</a>
+        <a href="/kontakt/">Kontakt oss</a>
+      </div>
+    </div>
+    <div class="footer-bunn">
+      <p class="footer-kopi">© 2026 VarmeGuiden.com — Uavhengig informasjonsside om oppvarming i Norge</p>
+      <p class="footer-ansvarsfraskrivelse">Noen lenker på denne siden kan være tilknyttede lenker. Dette påvirker ikke innholdet vårt. Les vår <a href="/om/annonsepolicy/">annonsepolicy</a>.</p>
+    </div>
+  </div>
+</footer>
+
 <script src="/js/main.js" defer></script>
+
 </body>
 </html>
