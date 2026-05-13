@@ -1,0 +1,1011 @@
+/* =========================================
+   VARMEGUIDEN.COM — Hoved CSS
+   Sist oppdatert: Mai 2026
+   ========================================= */
+
+/* --- Variabler --- */
+:root {
+  --grønn-mørk: #0a3d1f;
+  --grønn-mid: #0f5c2e;
+  --grønn-lys: #1a8c47;
+  --grønn-accent: #2db862;
+  --oransje: #e05c1a;
+  --oransje-lys: #f97316;
+  --hvit: #ffffff;
+  --grå-lys: #f8f9f6;
+  --grå-mid: #e8ede9;
+  --grå-tekst: #6b7a6d;
+  --sort: #111a12;
+  --tekst-primær: #1a2b1c;
+  --tekst-sekundær: #4a5e4c;
+  --border: #d4ddd5;
+  --skygge: 0 1px 3px rgba(0,0,0,0.08);
+  --skygge-md: 0 4px 16px rgba(0,0,0,0.10);
+  --radius: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --font-hoved: 'Source Serif 4', Georgia, serif;
+  --font-ui: 'DM Sans', system-ui, sans-serif;
+  --maks-bredde: 1140px;
+  --content-bredde: 760px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--tekst-primær);
+  background: var(--hvit);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--grønn-mid); text-decoration: none; }
+a:hover { color: var(--oransje); }
+ul, ol { padding-left: 1.5rem; }
+
+/* --- Google Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* --- Topbar --- */
+.topbar {
+  background: var(--grønn-mørk);
+  padding: 7px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.topbar-strom {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #7ecfa0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.topbar-strom strong { color: #fff; font-weight: 600; }
+.topbar-strom .strom-pris { font-size: 13px; }
+.topbar-nav { display: flex; gap: 16px; }
+.topbar-nav a {
+  font-size: 12px;
+  color: rgba(255,255,255,0.55);
+  transition: color 0.2s;
+}
+.topbar-nav a:hover { color: #7ecfa0; }
+
+/* --- Header --- */
+.site-header {
+  background: var(--hvit);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: var(--maks-bredde);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+.logo-ikon {
+  width: 36px;
+  height: 36px;
+  background: var(--oransje);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: white;
+}
+.logo-navn {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--sort);
+  letter-spacing: -0.3px;
+}
+.logo-navn em { color: var(--oransje); font-style: normal; }
+
+/* Nav */
+.hoved-nav { display: flex; gap: 4px; align-items: center; }
+.hoved-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--tekst-sekundær);
+  padding: 7px 12px;
+  border-radius: var(--radius);
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.hoved-nav a:hover { background: var(--grå-lys); color: var(--tekst-primær); }
+.hoved-nav a.aktiv { color: var(--grønn-mid); }
+.nav-cta {
+  background: var(--grønn-mørk) !important;
+  color: white !important;
+  padding: 8px 16px !important;
+  border-radius: var(--radius) !important;
+  font-weight: 600 !important;
+  margin-left: 8px;
+}
+.nav-cta:hover { background: var(--grønn-mid) !important; }
+
+/* Hamburger (mobil) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--tekst-primær);
+  font-size: 24px;
+}
+
+/* --- Brødsmule --- */
+.brødsmule {
+  font-size: 13px;
+  color: var(--grå-tekst);
+  padding: 10px 24px;
+  max-width: var(--maks-bredde);
+  margin: 0 auto;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.brødsmule a { color: var(--grå-tekst); }
+.brødsmule a:hover { color: var(--grønn-mid); }
+.brødsmule span { color: var(--border); }
+
+/* --- Hero (forsiden) --- */
+.hero {
+  background: var(--grå-lys);
+  border-bottom: 1px solid var(--border);
+  padding: 48px 24px;
+}
+.hero-inner {
+  max-width: var(--maks-bredde);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 48px;
+  align-items: center;
+}
+.hero-etikett {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--grønn-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: var(--font-hoved);
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--sort);
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+.hero-ingress {
+  font-size: 1.05rem;
+  color: var(--tekst-sekundær);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  max-width: 520px;
+}
+.tillit-rad {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.tillit-punkt {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--grå-tekst);
+}
+.tillit-punkt svg { color: var(--grønn-mid); flex-shrink: 0; }
+.hero-knapper { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Vinner-kort (hero sidebar) */
+.vinner-kort {
+  background: var(--hvit);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--skygge-md);
+}
+.vinner-badge {
+  display: inline-block;
+  background: var(--grønn-mørk);
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+  letter-spacing: 0.3px;
+}
+.vinner-kort img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: var(--grå-lys);
+  margin-bottom: 14px;
+  padding: 16px;
+}
+.vinner-navn { font-size: 15px; font-weight: 600; color: var(--sort); margin-bottom: 4px; }
+.vinner-meta { font-size: 12px; color: var(--grå-tekst); margin-bottom: 12px; }
+.vinner-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.score-tall {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--grønn-mid);
+  line-height: 1;
+}
+.score-stjerner { color: #f59e0b; font-size: 14px; }
+.score-label { font-size: 12px; color: var(--grå-tekst); }
+
+/* --- Knapper --- */
+.knapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.knapp-primær {
+  background: var(--oransje);
+  color: white;
+}
+.knapp-primær:hover { background: var(--oransje-lys); color: white; }
+.knapp-sekundær {
+  background: var(--hvit);
+  color: var(--tekst-primær);
+  border: 1px solid var(--border);
+}
+.knapp-sekundær:hover { background: var(--grå-lys); color: var(--tekst-primær); }
+.knapp-grønn {
+  background: var(--grønn-mørk);
+  color: white;
+}
+.knapp-grønn:hover { background: var(--grønn-mid); color: white; }
+.knapp-full { width: 100%; justify-content: center; }
+.knapp-lg { padding: 12px 24px; font-size: 15px; }
+
+/* --- Søkefelt --- */
+.søk-wrapper {
+  background: var(--hvit);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 20px;
+  margin: 0 24px;
+  max-width: var(--maks-bredde);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  box-shadow: var(--skygge-md);
+  position: relative;
+  z-index: 10;
+}
+.søk-rad {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.søk-input {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  font-size: 14px;
+  font-family: var(--font-ui);
+  color: var(--tekst-primær);
+  background: var(--grå-lys);
+  outline: none;
+}
+.søk-input:focus { border-color: var(--grønn-mid); background: var(--hvit); }
+.søk-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.søk-tag {
+  font-size: 12px;
+  color: var(--tekst-sekundær);
+  background: var(--grå-lys);
+  border: 1px solid var(--border);
+  padding: 3px 12px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.søk-tag:hover { border-color: var(--grønn-mid); color: var(--grønn-mid); }
+
+/* --- Layout: hoved + sidebar --- */
+.side-layout {
+  max-width: var(--maks-bredde);
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  align-items: start;
+}
+.hoved-innhold { min-width: 0; }
+.sidebar { min-width: 0; }
+
+/* --- Seksjoner --- */
+.seksjon { margin-bottom: 40px; }
+.seksjon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--grønn-mørk);
+}
+.seksjon-tittel {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--grønn-mørk);
+}
+.seksjon-lenke { font-size: 13px; color: var(--oransje); }
+.seksjon-lenke:hover { color: var(--oransje-lys); }
+
+/* --- Artikkelkort --- */
+.kort-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.artikkel-kort {
+  background: var(--hvit);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: block;
+}
+.artikkel-kort:hover {
+  box-shadow: var(--skygge-md);
+  transform: translateY(-2px);
+}
+.kort-bilde {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  background: var(--grå-mid);
+}
+.kort-bilde-placeholder {
+  width: 100%;
+  height: 160px;
+  background: var(--grå-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+.kort-innhold { padding: 16px; }
+.kort-kategori {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--oransje);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.kort-tittel {
+  font-family: var(--font-hoved);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sort);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.kort-meta {
+  font-size: 12px;
+  color: var(--grå-tekst);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.karakter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: #eaf3de;
+  color: #2d6a0f;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+/* Fremhevet kort */
+.fremhevet-kort {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s;
+}
+.fremhevet-kort:hover { box-shadow: var(--skygge-md); }
+.fremhevet-bilde {
+  background: var(--grønn-mørk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  min-height: 200px;
+}
+.fremhevet-innhold {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.fremhevet-innhold .kort-tittel {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.fremhevet-ingress {
+  font-size: 14px;
+  color: var(--tekst-sekundær);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* --- Rangert liste (beste produkter) --- */
+.rangert-liste {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.rangert-element {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--hvit);
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.rangert-element:last-child { border-bottom: none; }
+.rangert-element:hover { background: var(--grå-lys); }
+.rang-tall {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--grå-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tekst-sekundær);
+  flex-shrink: 0;
+}
+.rang-tall.gull { background: #faeeda; color: #854f0b; }
+.rang-tall.sølv { background: #f0f0f0; color: #555; }
+.rang-tall.bronse { background: #fdf0e0; color: #7a4a1e; }
+.rang-info { flex: 1; min-width: 0; }
+.rang-kategori {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--oransje);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 2px;
+}
+.rang-navn {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sort);
+  margin-bottom: 2px;
+}
+.rang-detalj { font-size: 12px; color: var(--grå-tekst); }
+.rang-score {
+  background: #eaf3de;
+  color: #2d6a0f;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+/* --- ENOVA banner --- */
+.enova-banner {
+  background: var(--grønn-mørk);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.enova-tekst h3 {
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  color: #a8e6c3;
+  margin-bottom: 4px;
+}
+.enova-beløp { font-size: 26px; font-weight: 700; color: white; line-height: 1; }
+.enova-beløp-label { font-size: 12px; color: #6dbf96; margin-top: 2px; }
+.enova-tekst p { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+
+/* --- Kategorier grid --- */
+.kategorier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+}
+.kategori-kort {
+  background: var(--grå-lys);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 12px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s;
+}
+.kategori-kort:hover {
+  border-color: var(--grønn-mid);
+  background: var(--hvit);
+  box-shadow: var(--skygge);
+}
+.kategori-ikon { font-size: 26px; margin-bottom: 8px; }
+.kategori-navn { font-size: 13px; font-weight: 600; color: var(--sort); margin-bottom: 2px; }
+.kategori-antall { font-size: 11px; color: var(--grå-tekst); }
+
+/* --- Sidebar widgets --- */
+.widget {
+  background: var(--hvit);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.widget-header {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sort);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.widget-innhold { padding: 16px 18px; }
+
+/* Lead form widget */
+.lead-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--tekst-sekundær);
+  margin-bottom: 4px;
+  margin-top: 12px;
+}
+.lead-form label:first-child { margin-top: 0; }
+.lead-form input,
+.lead-form select {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  font-size: 13px;
+  font-family: var(--font-ui);
+  color: var(--tekst-primær);
+  background: var(--grå-lys);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.lead-form input:focus,
+.lead-form select:focus { border-color: var(--grønn-mid); background: var(--hvit); }
+.lead-disclaimer {
+  font-size: 11px;
+  color: var(--grå-tekst);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Toppliste widget */
+.toppliste-rad {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--grå-mid);
+  font-size: 13px;
+}
+.toppliste-rad:last-child { border-bottom: none; }
+.toppliste-merke { color: var(--tekst-primær); font-weight: 500; }
+.toppliste-score { color: var(--grønn-mid); font-weight: 600; }
+
+/* Lenkeliste widget */
+.lenke-liste a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--grå-mid);
+  font-size: 13px;
+  color: var(--tekst-sekundær);
+  transition: color 0.15s;
+}
+.lenke-liste a:last-child { border-bottom: none; }
+.lenke-liste a:hover { color: var(--grønn-mid); }
+.lenke-liste svg { opacity: 0.4; flex-shrink: 0; }
+
+/* --- Artikkel (innholdssider) --- */
+.artikkel-header {
+  max-width: var(--content-bredde);
+  margin: 0 auto;
+  padding: 32px 24px 0;
+}
+.artikkel-kategori {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--oransje);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+.artikkel-tittel {
+  font-family: var(--font-hoved);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--sort);
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+.artikkel-ingress {
+  font-size: 1.1rem;
+  color: var(--tekst-sekundær);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  font-family: var(--font-hoved);
+  font-style: italic;
+}
+.forfatter-rad {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.forfatter-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--grønn-mørk);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.forfatter-info { flex: 1; }
+.forfatter-navn { font-size: 13px; font-weight: 600; color: var(--sort); }
+.forfatter-meta { font-size: 12px; color: var(--grå-tekst); }
+.tillit-merker {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.tillit-merke {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--grå-tekst);
+}
+.tillit-merke svg { color: var(--grønn-mid); }
+
+/* Artikkel bilde */
+.artikkel-bilde {
+  width: 100%;
+  max-width: var(--content-bredde);
+  margin: 0 auto 24px;
+  padding: 0 24px;
+}
+.artikkel-bilde img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  height: 340px;
+  object-fit: cover;
+}
+.bilde-tekst {
+  font-size: 12px;
+  color: var(--grå-tekst);
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Innholdsfortegnelse */
+.innholdsfortegnelse {
+  background: var(--grå-lys);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.innholdsfortegnelse h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--grønn-mørk);
+  margin-bottom: 12px;
+}
+.innholdsfortegnelse ol {
+  padding-left: 20px;
+}
+.innholdsfortegnelse li {
+  margin-bottom: 6px;
+}
+.innholdsfortegnelse a {
+  font-size: 14px;
+  color: var(--tekst-sekundær);
+}
+.innholdsfortegnelse a:hover { color: var(--grønn-mid); }
+
+/* Rask-svar boks (featured snippet) */
+.rask-svar {
+  background: #e8f5f0;
+  border-left: 4px solid var(--grønn-mid);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 18px 20px;
+  margin-bottom: 28px;
+}
+.rask-svar h2 {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--grønn-mid);
+  margin-bottom: 8px;
+}
+.rask-svar p { font-size: 15px; color: var(--tekst-primær); line-height: 1.6; }
+
+/* Artikkel body tekst */
+.artikkel-body {
+  max-width: var(--content-bredde);
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+.artikkel-body h2 {
+  font-family: var(--font-hoved);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sort);
+  margin: 36px 0 14px;
+  letter-spacing: -0.2px;
+}
+.artikkel-body h3 {
+  font-family: var(--font-ui);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--sort);
+  margin: 24px 0 10px;
+}
+.artikkel-body p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--tekst-primær);
+  margin-bottom: 16px;
+}
+.artikkel-body ul, .artikkel-body ol {
+  margin-bottom: 16px;
+  padding-left: 24px;
+}
+.artikkel-body li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--tekst-primær);
+  margin-bottom: 6px;
+}
+.artikkel-body strong { font-weight: 600; color: var(--sort); }
+.artikkel-body a { color: var(--grønn-mid); text-decoration: underline; text-underline-offset: 3px; }
+.artikkel-body a:hover { color: var(--oransje); }
+
+/* Sammenligningstabell */
+.sammenligning-tabell {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 24px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.sammenligning-tabell th {
+  background: var(--grønn-mørk);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+}
+.sammenligning-tabell td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--grå-mid);
+  color: var(--tekst-primær);
+}
+.sammenligning-tabell tr:last-child td { border-bottom: none; }
+.sammenligning-tabell tr:nth-child(even) td { background: var(--grå-lys); }
+.sammenligning-tabell tr.vinner-rad td { background: #e8f5f0; font-weight: 500; }
+.tabell-cta { text-align: center; }
+
+/* --- FAQ seksjon --- */
+.faq-seksjon { margin-bottom: 32px; }
+.faq-seksjon h2 {
+  font-family: var(--font-hoved);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--sort);
+  margin-bottom: 20px;
+}
+.faq-element {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.faq-spørsmål {
+  width: 100%;
+  background: var(--hvit);
+  border: none;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sort);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-ui);
+  transition: background 0.15s;
+}
+.faq-spørsmål:hover { background: var(--grå-lys); }
+.faq-svar {
+  padding: 0 20px 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--tekst-sekundær);
+  display: none;
+}
+.faq-element.åpen .faq-svar { display: block; }
+.faq-element.åpen .faq-spørsmål { background: var(--grå-lys); }
+.faq-pil { transition: transform 0.2s; font-size: 18px; color: var(--grå-tekst); }
+.faq-element.åpen .faq-pil { transform: rotate(180deg); }
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--grønn-mørk);
+  padding: 48px 24px 24px;
+  margin-top: 48px;
+}
+.footer-inner { max-width: var(--maks-bredde); margin: 0 auto; }
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.footer-logo { margin-bottom: 12px; }
+.footer-logo .logo-navn { color: white; }
+.footer-beskrivelse { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; max-width: 240px; }
+.footer-kolonne h4 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #6dbf96;
+  margin-bottom: 14px;
+}
+.footer-kolonne a {
+  display: block;
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 8px;
+  transition: color 0.15s;
+}
+.footer-kolonne a:hover { color: rgba(255,255,255,0.8); }
+.footer-bunn {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.footer-kopi { font-size: 12px; color: rgba(255,255,255,0.25); }
+.footer-ansvarsfraskrivelse {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  max-width: 400px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+/* --- Responsiv --- */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .vinner-kort { display: none; }
+  .side-layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .fremhevet-kort { grid-template-columns: 1fr; }
+  .fremhevet-bilde { min-height: 160px; }
+}
+
+@media (max-width: 640px) {
+  .topbar { display: none; }
+  .hoved-nav { display: none; }
+  .hamburger { display: block; }
+  .hero { padding: 28px 16px; }
+  .hero h1 { font-size: 1.7rem; }
+  .side-layout { padding: 20px 16px; }
+  .søk-wrapper { margin: -16px 16px 0; }
+  .enova-banner { flex-direction: column; text-align: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bunn { flex-direction: column; }
+  .footer-ansvarsfraskrivelse { text-align: left; max-width: 100%; }
+  .artikkel-tittel { font-size: 1.6rem; }
+}
