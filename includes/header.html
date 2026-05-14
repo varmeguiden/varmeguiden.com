@@ -1,17 +1,53 @@
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-strom">
+    <span aria-hidden="true">⚡</span>
+    <span>Strømpris nå (NO1): <strong class="strom-pris" aria-live="polite">laster...</strong></span>
+    <span aria-hidden="true" style="color:rgba(255,255,255,0.15)">|</span>
+    <span>Spar strøm med riktig oppvarming</span>
+  </div>
+  <nav class="topbar-nav" aria-label="Sekundær navigasjon">
+    <a href="https://enova.no" target="_blank" rel="noopener noreferrer">ENOVA.no</a>
+    <a href="/om/">Om oss</a>
+    <a href="/kontakt/">Kontakt</a>
+  </nav>
+</div>
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <a href="/" class="logo" aria-label="VarmeGuiden forsiden">
+    <a href="/" class="logo" aria-label="VarmeGuiden — tilbake til forsiden">
       <div class="logo-ikon" aria-hidden="true">🔥</div>
       <div class="logo-navn">Varme<em>Guiden</em></div>
     </a>
-    <nav class="hoved-nav" aria-label="Hovedmeny">
-      <a href="/varmepumpe/">Varmepumper</a>
-      <a href="/hyttevarme/">Hyttevarme</a>
-      <a href="/stromsparing/">Strøm & ENOVA</a>
-      <a href="/vedovn/">Vedovner</a>
-      <a href="/kalkulatorer/">Kalkulatorer</a>
-      <a href="/tilbud/" class="nav-cta">Få 3 tilbud gratis</a>
+    <nav class="hoved-nav" aria-label="Hovednavigasjon">
+      <a href="/#varmepumper">Varmepumper</a>
+      <a href="/#hyttevarme">Hyttevarme</a>
+      <a href="/#winter-systems">Vinterforberedelse</a>
+      <a href="/#enova">ENOVA støtte</a>
+      <a href="/#energisparing">Energisparing</a>
+      <a href="/om/" class="nav-cta">Om oss</a>
     </nav>
-    <button class="hamburger" aria-label="Åpne meny" onclick="toggleMeny()">☰</button>
+    <button class="hamburger" aria-label="Åpne navigasjonsmeny" aria-expanded="false" aria-controls="mobil-meny">☰</button>
   </div>
 </header>
+
+<!-- MOBIL MENY -->
+<div class="mobil-meny-overlay" aria-hidden="true"></div>
+<nav class="mobil-meny" id="mobil-meny" aria-label="Mobilnavigasjon">
+  <div class="mobil-meny-topp">
+    <div class="mobil-meny-logo">Varme<em>Guiden</em></div>
+    <button class="mobil-meny-lukk" aria-label="Lukk navigasjonsmeny">✕</button>
+  </div>
+  <div class="mobil-meny-del">Innhold</div>
+  <a href="/#varmepumper">Varmepumper</a>
+  <a href="/#hyttevarme">Hyttevarme</a>
+  <a href="/#winter-systems">Vinterforberedelse</a>
+  <a href="/#enova">ENOVA støtte</a>
+  <a href="/#energisparing">Energisparing</a>
+  <a href="/#faq">Spørsmål & svar</a>
+  <div class="mobil-meny-del">Om</div>
+  <a href="/om/">Om VarmeGuiden</a>
+  <a href="/kontakt/">Kontakt oss</a>
+  <a href="https://enova.no" target="_blank" rel="noopener noreferrer">ENOVA.no ↗</a>
+</nav>

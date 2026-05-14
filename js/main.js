@@ -1,5 +1,6 @@
 /* =========================================
    VARMEGUIDEN.COM — JavaScript
+   Produksjonsversjon
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -42,21 +43,28 @@ document.addEventListener('DOMContentLoaded', function () {
     if (mobilMeny) mobilMeny.classList.add('aktiv');
     if (overlay) overlay.classList.add('aktiv');
     document.body.style.overflow = 'hidden';
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
   }
 
   function lukkeMeny() {
     if (mobilMeny) mobilMeny.classList.remove('aktiv');
     if (overlay) overlay.classList.remove('aktiv');
     document.body.style.overflow = '';
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
   }
 
   if (hamburger) hamburger.addEventListener('click', åpneMeny);
   if (lukk) lukk.addEventListener('click', lukkeMeny);
   if (overlay) overlay.addEventListener('click', lukkeMeny);
 
+  /* Lukk meny med Escape */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') lukkeMeny();
+  });
+
 });
 
-/* --- Strømpris API --- */
+/* --- Strømpris API (hvakosterstrommen.no) --- */
 async function lastStrømpris() {
   try {
     var dato = new Date();
@@ -67,7 +75,6 @@ async function lastStrømpris() {
     var svar = await fetch(
       'https://www.hvakosterstrommen.no/api/v1/prices/' + år + '/' + måned + '-' + dag + '_NO1.json'
     );
-
     if (!svar.ok) throw new Error('API feil');
     var data = await svar.json();
 
@@ -76,6 +83,7 @@ async function lastStrømpris() {
       return new Date(t.time_start).getHours() === time;
     }) || data[0];
 
+    /* Pris inkl. MVA */
     var pris = (nå.NOK_per_kWh * 1.25).toFixed(2);
 
     document.querySelectorAll('.strom-pris').forEach(function (el) {
@@ -84,14 +92,7 @@ async function lastStrømpris() {
 
   } catch (e) {
     document.querySelectorAll('.strom-pris').forEach(function (el) {
-      el.textContent = 'se priser';
+      el.textContent = 'se hvakosterstrommen.no';
     });
-  }
-}
-
-/* --- Søk --- */
-function søk(tekst) {
-  if (tekst && tekst.trim()) {
-    alert('Søkefunksjon kommer snart! Bruk navigasjonen over for å finne det du leter etter.');
   }
 }
