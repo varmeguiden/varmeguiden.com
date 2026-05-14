@@ -122,7 +122,7 @@
       <div class="logo-navn">Varme<em>Guiden</em></div>
     </a>
     <nav class="hoved-nav" aria-label="Hovednavigasjon">
-      <a href="/#varmepumper">Varmepumper</a>
+      <a href="/varmepumpe/">Varmepumper</a>
       <a href="/#hyttevarme">Hyttevarme</a>
       <a href="/#winter-systems">Vinterforberedelse</a>
       <a href="/#enova">ENOVA støtte</a>
@@ -141,7 +141,7 @@
     <button class="mobil-meny-lukk" aria-label="Lukk navigasjonsmeny">✕</button>
   </div>
   <div class="mobil-meny-del">Innhold</div>
-  <a href="/#varmepumper">Varmepumper</a>
+  <a href="/varmepumpe/">Varmepumper</a>
   <a href="/#hyttevarme">Hyttevarme</a>
   <a href="/#winter-systems">Vinterforberedelse</a>
   <a href="/#enova">ENOVA støtte</a>
@@ -175,7 +175,7 @@
         </div>
       </div>
       <div class="hero-knapper">
-        <a href="/#varmepumper" class="knapp knapp-primær knapp-lg">Se varmepumpe-guide ↓</a>
+        <a href="/varmepumpe/" class="knapp knapp-primær knapp-lg">Se varmepumpe-guide ↓</a>
         <a href="/#enova" class="knapp knapp-sekundær knapp-lg">ENOVA støtte ↓</a>
       </div>
     </div>
@@ -199,7 +199,7 @@
           <div class="vinner-tall-label">tilbakebetaling</div>
         </div>
       </div>
-      <a href="/#varmepumper" class="knapp knapp-grønn knapp-full">Les varmepumpe-guiden ↓</a>
+      <a href="/varmepumpe/" class="knapp knapp-grønn knapp-full">Les varmepumpe-guiden ↓</a>
     </aside>
   </div>
 </section>
@@ -235,6 +235,7 @@
   <section class="seksjon" id="varmepumper" aria-labelledby="varmepumper-h2">
     <div class="seksjon-header">
       <h2 class="seksjon-tittel" id="varmepumper-h2">Varmepumper i Norge</h2>
+      <a href="/varmepumpe/" class="seksjon-lenke">Les komplett guide →</a>
     </div>
 
     <p style="font-size:15px;line-height:1.75;color:var(--tekst-primær);margin-bottom:16px">En varmepumpe henter gratis varmeenergi fra uteluften og overfører den inn i boligen. I stedet for å lage varme fra bunnen av — slik en panelovn gjør — <em>flytter</em> den varme som allerede finnes i uteluften. Det gjør den 3–5 ganger mer effektiv enn tradisjonell elektrisk oppvarming, og for norske boliger med kalde vintre er det stor forskjell på strømregningen.</p>
@@ -315,7 +316,7 @@
 
     <h3 style="font-family:var(--font-hoved);font-size:1.1rem;font-weight:600;color:var(--sort);margin:24px 0 14px">Hvilken type varmepumpe passer for deg?</h3>
     <div class="kort-grid">
-      <div class="artikkel-kort" style="cursor:default">
+      <a href="/varmepumpe/#typer" class="artikkel-kort">
         <div class="kort-bilde-placeholder" aria-hidden="true">💨</div>
         <div class="kort-innhold">
           <div class="kort-kategori">Vanligste type · Passer de fleste</div>
@@ -323,8 +324,8 @@
           <p style="font-size:13px;color:var(--tekst-sekundær);line-height:1.6;margin-top:6px">Henter varme fra uteluften og blåser inn i rommet. Rask installasjon og relativt rimelig. Passer boliger under 150 kvm. <strong style="color:#c0392b">Dekker ikke varmtvann.</strong></p>
           <div style="margin-top:8px"><span class="hytte-tag tag-grønn">Pris: 15 000–30 000 kr inkl. installasjon</span></div>
         </div>
-      </div>
-      <div class="artikkel-kort" style="cursor:default">
+      </a>
+      <a href="/varmepumpe/#typer" class="artikkel-kort">
         <div class="kort-bilde-placeholder" aria-hidden="true">🌊</div>
         <div class="kort-innhold">
           <div class="kort-kategori">For store boliger med radiatorer</div>
@@ -332,8 +333,8 @@
           <p style="font-size:13px;color:var(--tekst-sekundær);line-height:1.6;margin-top:6px">Kobles til eksisterende radiatorer eller gulvvarme. Dekker varmtvann. <strong style="color:#c0392b">Høy installasjonskostnad — ikke lønnsomt for alle.</strong></p>
           <div style="margin-top:8px"><span class="hytte-tag tag-blå">Pris: 50 000–120 000 kr inkl. installasjon</span></div>
         </div>
-      </div>
-      <div class="artikkel-kort" style="cursor:default">
+      </a>
+      <a href="/varmepumpe/#typer" class="artikkel-kort">
         <div class="kort-bilde-placeholder" aria-hidden="true">🏔️</div>
         <div class="kort-innhold">
           <div class="kort-kategori">For store eneboliger med plass til boring</div>
@@ -341,7 +342,16 @@
           <p style="font-size:13px;color:var(--tekst-sekundær);line-height:1.6;margin-top:6px">Henter varme fra berggrunnen. Uavhengig av utetemperatur. <strong style="color:#c0392b">Krever boring — kostbart og tidkrevende å installere.</strong></p>
           <div style="margin-top:8px"><span class="hytte-tag tag-oransje">Pris: 150 000–300 000 kr inkl. boring</span></div>
         </div>
+      </a>
+    </div>
+
+    <!-- CTA til artikkel -->
+    <div style="background:var(--grå-lys);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:var(--sort);margin-bottom:4px">Vil du vite mer om varmepumper?</div>
+        <div style="font-size:13px;color:var(--tekst-sekundær)">Vi har skrevet en komplett guide — COP, SCOP, merker, priser, installasjon og ENOVA-støtte.</div>
       </div>
+      <a href="/varmepumpe/" class="knapp knapp-grønn" style="flex-shrink:0">Les komplett guide →</a>
     </div>
   </section>
 
@@ -672,7 +682,7 @@
   <div class="widget">
     <div class="widget-header">📋 Innhold på denne siden</div>
     <div class="widget-innhold lenke-liste">
-      <a href="/#varmepumper">Varmepumper i Norge <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="/varmepumpe/">Varmepumper i Norge <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
       <a href="/#hyttevarme">Hyttevarme <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
       <a href="/#winter-systems">Vinterforberedelse <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
       <a href="/#enova">ENOVA støtte <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></a>
@@ -718,7 +728,7 @@
       </div>
       <div class="footer-kolonne">
         <h4>Temaer</h4>
-        <a href="/#varmepumper">Varmepumper</a>
+        <a href="/varmepumpe/">Varmepumper</a>
         <a href="/#hyttevarme">Hyttevarme</a>
         <a href="/#winter-systems">Vinterforberedelse</a>
         <a href="/#enova">ENOVA støtte</a>
