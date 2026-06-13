@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varmepumpe feilsøking – Vanlige feil og løsninger | VarmeGuiden</title>
+  <meta name="description" content="Varmepumpen varmer ikke, blinker eller lager rare lyder? Komplett feilsøkingsguide med vanlige feil, hva du kan fikse selv, og når du må ringe servicetekniker.">
+  <link rel="canonical" href="https://varmeguiden.com/varmepumpe/varmepumpe-feilsoking/">
+  <meta property="og:title" content="Varmepumpe feilsøking – Vanlige feil og løsninger">
+  <meta property="og:description" content="Komplett feilsøkingsguide — vanlige feil, hva du kan fikse selv, og når du må ringe tekniker.">
+  <meta property="og:url" content="https://varmeguiden.com/varmepumpe/varmepumpe-feilsoking/">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="nb_NO">
+  <meta property="og:image" content="https://varmeguiden.com/img/varmepumpe-feilsoking.webp">
+  <meta property="article:published_time" content="2026-06-13">
+  <meta property="article:modified_time" content="2026-06-13">
+  <meta property="article:author" content="Erik Svendsen">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" hreflang="nb" href="https://varmeguiden.com/varmepumpe/varmepumpe-feilsoking/">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="/img/varmepumpe-feilsoking.webp">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Varmepumpe feilsøking – Vanlige feil og løsninger","description":"Komplett feilsøkingsguide for varmepumper.","image":"https://varmeguiden.com/img/varmepumpe-feilsoking.webp","author":{"@type":"Person","name":"Erik Svendsen","jobTitle":"Energirådgiver","url":"https://varmeguiden.com/om/"},"publisher":{"@type":"Organization","name":"VarmeGuiden","url":"https://varmeguiden.com"},"datePublished":"2026-06-13","dateModified":"2026-06-13","mainEntityOfPage":{"@type":"WebPage","@id":"https://varmeguiden.com/varmepumpe/varmepumpe-feilsoking/"},"inLanguage":"nb","keywords":"varmepumpe feilsøking, varmepumpe feil, varmepumpe blinker, varmepumpe varmer ikke, varmepumpe feilkode"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Forside","item":"https://varmeguiden.com/"},{"@type":"ListItem","position":2,"name":"Varmepumpe","item":"https://varmeguiden.com/varmepumpe/"},{"@type":"ListItem","position":3,"name":"Feilsøking","item":"https://varmeguiden.com/varmepumpe/varmepumpe-feilsoking/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Hvorfor varmer ikke varmepumpen min?","acceptedAnswer":{"@type":"Answer","text":"De vanligste årsakene er: skittent filter som kveler luftstrømmen, feil modus eller for lav temperaturinnstilling, isete utedel, eller at det er ekstremt kaldt ute. Sjekk først at filtrene er rene og at pumpen står i varmemodus. Hjelper ikke det, og pumpen er gammel, kan det være kjølemedium-lekkasje som krever tekniker."}},{"@type":"Question","name":"Hva betyr det når varmepumpen blinker?","acceptedAnswer":{"@type":"Answer","text":"Blinkende lys er som regel en feilkode. Antall blink eller fargen indikerer hvilken feil det gjelder. Slå opp blinkemønsteret i bruksanvisningen for din modell — der står hva koden betyr. Vanlige årsaker er sensorfeil, kommunikasjonsfeil mellom inne- og utedel, eller behov for service."}},{"@type":"Question","name":"Hva kan jeg fikse selv på varmepumpen?","acceptedAnswer":{"@type":"Answer","text":"Du kan trygt rengjøre filtre og utedel, fjerne snø og is rundt utedelen, sjekke innstillinger og modus, tilbakestille pumpen via av/på, og bytte batterier i fjernkontrollen. Alt som involverer kjølemedium, elektronikk eller demontering må overlates til sertifisert tekniker."}},{"@type":"Question","name":"Når må jeg ringe servicetekniker til varmepumpen?","acceptedAnswer":{"@type":"Answer","text":"Ring tekniker ved: vedvarende feilkoder etter tilbakestilling, mistanke om kjølemedium-lekkasje (gradvis dårligere varme), vann- eller oljelekkasje, brent lukt, kraftige ulyder fra kompressoren, eller hvis utedelen fryser helt til gjentatte ganger. Alt med kjølemedium krever F-gass-sertifikat."}}]}
+  </script>
+
+  <style>
+    .artikkel-wrapper{max-width:var(--maks-bredde);margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 290px;gap:48px;align-items:start}
+    .artikkel-hoved{min-width:0}.artikkel-sidebar{min-width:0;position:sticky;top:80px}
+    .artikkel-kategori{font-size:12px;font-weight:700;color:var(--oransje);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+    .artikkel-h1{font-family:var(--font-hoved);font-size:2rem;font-weight:600;line-height:1.2;color:var(--sort);margin-bottom:14px;letter-spacing:-.3px}
+    .artikkel-ingress{font-size:1.05rem;color:var(--tekst-sekundær);line-height:1.65;margin-bottom:18px;font-family:var(--font-hoved);font-style:italic}
+    .artikkel-meta{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+    .meta-avatar{width:38px;height:38px;border-radius:50%;background:var(--grønn-mørk);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+    .meta-tekst{flex:1;min-width:120px}.meta-navn{font-size:13px;font-weight:600;color:var(--sort)}.meta-info{font-size:12px;color:var(--grå-tekst)}
+    .meta-badges{display:flex;gap:8px;flex-wrap:wrap}.meta-badge{font-size:11px;background:var(--grå-lys);border:1px solid var(--border);color:var(--grå-tekst);padding:2px 10px;border-radius:100px}
+    .hero-bilde{width:100%;border-radius:var(--radius-lg);margin-bottom:8px;display:block;aspect-ratio:16/9;object-fit:cover;background:var(--grå-mid)}
+    .bilde-tekst{font-size:12px;color:var(--grå-tekst);text-align:center;margin-bottom:28px;font-style:italic}
+    .toc{background:var(--grå-lys);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:28px}
+    .toc-tittel{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--grønn-mørk);margin-bottom:12px}
+    .toc ol{padding-left:0;list-style:none;counter-reset:toc}.toc li{margin-bottom:7px;counter-increment:toc;display:flex;gap:8px}
+    .toc li::before{content:counter(toc) ".";color:var(--grønn-mid);font-weight:700;font-size:13px;flex-shrink:0;min-width:18px}
+    .toc a{font-size:14px;color:var(--tekst-sekundær)}.toc a:hover{color:var(--grønn-mid)}
+    .artikkel-tekst h2{font-family:var(--font-hoved);font-size:1.5rem;font-weight:600;color:var(--sort);margin:40px 0 14px;padding-top:8px;border-top:2px solid var(--grønn-mørk)}
+    .artikkel-tekst h3{font-family:var(--font-ui);font-size:1.05rem;font-weight:600;color:var(--sort);margin:22px 0 10px}
+    .artikkel-tekst p{font-size:1rem;line-height:1.8;color:var(--tekst-primær);margin-bottom:16px}
+    .artikkel-tekst ul,.artikkel-tekst ol{margin-bottom:16px;padding-left:22px}
+    .artikkel-tekst li{font-size:1rem;line-height:1.75;color:var(--tekst-primær);margin-bottom:7px}
+    .artikkel-tekst strong{font-weight:600;color:var(--sort)}.artikkel-tekst a{color:var(--grønn-mid);text-decoration:underline;text-underline-offset:3px}
+    .info-boks{background:#e8f5f0;border-left:4px solid var(--grønn-mid);border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;margin:20px 0}
+    .info-boks p{font-size:14px;line-height:1.7;color:var(--tekst-primær);margin:0}
+    .advarsel-boks{background:#fff8e6;border:1px solid #f0c844;border-radius:var(--radius-lg);padding:14px 18px;margin:20px 0;display:flex;gap:12px;align-items:flex-start}
+    .advarsel-boks p{font-size:14px;line-height:1.65;color:#5a3a00;margin:0}
+    .rod-boks{background:#fdecea;border:1px solid #f5b7b1;border-radius:var(--radius-lg);padding:14px 18px;margin:20px 0;display:flex;gap:12px;align-items:flex-start}
+    .rod-boks p{font-size:14px;line-height:1.65;color:#943126;margin:0}
+    .feil-blokk{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px}
+    .feil-blokk h3{margin-top:0!important;font-size:15px;font-weight:700;color:var(--sort);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+    .feil-blokk .sjekk{font-size:13px;font-weight:600;color:var(--grønn-mørk);margin:10px 0 4px}
+    .feil-blokk ul{margin:0 0 0 0!important;padding-left:18px!important}
+    .feil-blokk li{font-size:14px!important;line-height:1.6!important;margin-bottom:4px!important}
+    .selv-vs-proff{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+    .svp-kort{border-radius:var(--radius-lg);padding:18px}
+    .svp-kort.selv{border:1px solid var(--grønn-mid);background:#f0faf5}
+    .svp-kort.proff{border:1px solid #f5b7b1;background:#fdecea}
+    .svp-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+    .svp-kort.selv .svp-tittel{color:#2d6a0f}.svp-kort.proff .svp-tittel{color:#943126}
+    .svp-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+    .svp-kort.selv .svp-liste{color:#2d6a0f}.svp-kort.proff .svp-liste{color:#943126}
+    .faq-element{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
+    .faq-spørsmål{width:100%;background:var(--hvit);border:none;padding:15px 18px;text-align:left;font-size:14px;font-weight:600;color:var(--sort);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-ui);transition:background .15s;gap:12px}
+    .faq-spørsmål:hover{background:var(--grå-lys)}.faq-svar{padding:0 18px 15px;font-size:14px;line-height:1.7;color:var(--tekst-sekundær);display:none}
+    .faq-svar a{color:var(--grønn-mid);text-decoration:underline}.faq-element.åpen .faq-svar{display:block}.faq-element.åpen .faq-spørsmål{background:var(--grå-lys)}
+    .faq-pil{transition:transform .2s;font-size:14px;color:var(--grå-tekst);flex-shrink:0}.faq-element.åpen .faq-pil{transform:rotate(180deg)}
+    .relaterte-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .relatert-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px;text-decoration:none;display:block;transition:background .15s}
+    .relatert-kort:hover{background:var(--grå-lys)}.relatert-ikon{font-size:20px;margin-bottom:6px}
+    .relatert-navn{font-size:13px;font-weight:600;color:var(--sort);line-height:1.35}.relatert-pil{font-size:12px;color:var(--oransje);margin-top:4px}
+    @media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.selv-vs-proff{grid-template-columns:1fr}}
+    @media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<a href="#artikkel-innhold" class="skip-link">Hopp til innhold</a>
+<div class="topbar">
+  <div class="topbar-strom">
+    <span aria-hidden="true">⚡</span>
+    <span>Strømpris nå (NO1): <strong class="strom-pris" aria-live="polite">laster...</strong></span>
+    <span aria-hidden="true" style="color:rgba(255,255,255,0.15)">|</span>
+    <span>Mange feil løser du selv med rent filter</span>
+  </div>
+  <nav class="topbar-nav" aria-label="Sekundær navigasjon">
+    <a href="https://enova.no" target="_blank" rel="noopener noreferrer">ENOVA.no</a>
+    <a href="/om/">Om oss</a>
+    <a href="/kontakt/">Kontakt</a>
+  </nav>
+</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="logo" aria-label="VarmeGuiden — tilbake til forsiden">
+      <div class="logo-ikon" aria-hidden="true">🔥</div>
+      <div class="logo-navn">Varme<em>Guiden</em></div>
+    </a>
+    <nav class="hoved-nav" aria-label="Hovednavigasjon">
+      <a href="/varmepumpe/" class="aktiv">Varmepumper</a>
+      <a href="/hyttevarme/">Hyttevarme</a>
+      <a href="/gulvvarme/">Gulvvarme</a>
+      <a href="/enova/">ENOVA støtte</a>
+      <a href="/stromsparing/">Energisparing</a>
+      <a href="/om/" class="nav-cta">Om oss</a>
+    </nav>
+    <button class="hamburger" aria-label="Åpne navigasjonsmeny" aria-expanded="false">☰</button>
+  </div>
+</header>
+<div class="mobil-meny-overlay" aria-hidden="true"></div>
+<nav class="mobil-meny" id="mobil-meny" aria-label="Mobilnavigasjon">
+  <div class="mobil-meny-topp">
+    <div class="mobil-meny-logo">Varme<em>Guiden</em></div>
+    <button class="mobil-meny-lukk" aria-label="Lukk navigasjonsmeny">✕</button>
+  </div>
+  <div class="mobil-meny-del">🔥 Varmepumper</div>
+  <a href="/varmepumpe/">Varmepumpe — komplett guide</a>
+  <a href="/varmepumpe/luft-til-luft/">Luft til luft varmepumpe</a>
+  <a href="/varmepumpe/luft-til-vann/">Luft til vann varmepumpe</a>
+  <a href="/varmepumpe/luft-til-luft-vs-luft-til-vann/">Luft til luft vs luft til vann</a>
+  <a href="/varmepumpe/bergvarme/">Bergvarme</a>
+  <a href="/varmepumpe/varmepumpe-pris/">Varmepumpe pris</a>
+  <a href="/varmepumpe/varmepumpe-tilbud/">Varmepumpe tilbud</a>
+  <a href="/varmepumpe/varmepumpe-stromforbruk/">Varmepumpe strømforbruk</a>
+  <a href="/varmepumpe/varmepumpe-storrelse/">Varmepumpe størrelse</a>
+  <a href="/varmepumpe/varmepumpe-levetid/">Varmepumpe levetid</a>
+  <a href="/varmepumpe/varmepumpe-test/">Varmepumpe test</a>
+  <a href="/varmepumpe/cop-scop-forklart/">COP og SCOP forklart</a>
+  <a href="/varmepumpe/varmepumpe-vs-elektrisk/">Varmepumpe vs panelovn</a>
+  <a href="/varmepumpe/varmepumpe-installasjon/">Installasjon av varmepumpe</a>
+  <a href="/varmepumpe/varmepumpe-vinter/">Varmepumpe om vinteren</a>
+  <a href="/varmepumpe/varmepumpe-feilsoking/">Feilsøking</a>
+  <a href="/varmepumpe/varmepumpe-stoy/">Varmepumpe støy</a>
+  <a href="/varmepumpe/varmepumpe-vedlikehold/">Vedlikehold og rengjøring</a>
+  <a href="/varmepumpe/mitsubishi/">Mitsubishi varmepumpe</a>
+  <a href="/varmepumpe/daikin/">Daikin varmepumpe</a>
+  <a href="/varmepumpe/panasonic/">Panasonic varmepumpe</a>
+  <a href="/varmepumpe/samsung/">Samsung varmepumpe</a>
+  <a href="/varmepumpe/fujitsu/">Fujitsu varmepumpe</a>
+  <a href="/varmepumpe/beste-varmepumpe/">Beste varmepumpe</a>
+  <div class="mobil-meny-del">🏠 Oppvarming</div>
+  <a href="/hyttevarme/">Hyttevarme</a>
+  <a href="/gulvvarme/">Gulvvarme</a>
+  <div class="mobil-meny-del">💡 Energi & støtte</div>
+  <a href="/enova/">ENOVA støtte</a>
+  <a href="/stromsparing/">Strømsparing</a>
+  <div class="mobil-meny-del">Om oss</div>
+  <a href="/om/">Om VarmeGuiden</a>
+  <a href="/kontakt/">Kontakt oss</a>
+</nav>
+<nav class="brødsmule" aria-label="Brødsmulesti">
+  <a href="/">Forside</a>
+  <span aria-hidden="true">›</span>
+  <a href="/varmepumpe/">Varmepumpe</a>
+  <span aria-hidden="true">›</span>
+  <span aria-current="page">Feilsøking</span>
+</nav>
+
+<div class="artikkel-wrapper">
+<main class="artikkel-hoved" id="artikkel-innhold">
+  <div class="artikkel-header">
+    <div class="artikkel-kategori"><span aria-hidden="true">🔍</span> Varmepumpe feilsøking</div>
+    <h1 class="artikkel-h1">Varmepumpe feilsøking — vanlige feil og hvordan du løser dem</h1>
+    <p class="artikkel-ingress">Varmer pumpen dårlig, blinker den, eller lager den rare lyder? De fleste problemer har enkle årsaker du kan fikse selv. Her er den komplette feilsøkingsguiden — hva du kan løse på egen hånd, og når du må ringe sertifisert tekniker.</p>
+    <div class="artikkel-meta">
+      <div class="meta-avatar" aria-hidden="true">ES</div>
+      <div class="meta-tekst">
+        <div class="meta-navn">Erik Svendsen, energirådgiver</div>
+        <div class="meta-info">Publisert 13. juni 2026 · 11 min lesing · <a href="/om/" style="color:var(--grønn-mid)">Om forfatteren</a></div>
+      </div>
+      <div class="meta-badges">
+        <span class="meta-badge">✓ Uavhengig</span>
+        <span class="meta-badge">✓ Oppdatert juni 2026</span>
+      </div>
+    </div>
+  </div>
+
+  <figure>
+    <img src="/img/varmepumpe-feilsoking.webp"
+      alt="Person sjekker varmepumpe innedel med fjernkontroll under feilsøking i norsk hjem"
+      class="hero-bilde" width="1200" height="675" loading="eager" fetchpriority="high">
+    <figcaption class="bilde-tekst">Start alltid med det enkleste: rene filtre, riktig modus og en tilbakestilling løser de fleste problemer.</figcaption>
+  </figure>
+
+  <nav class="toc" aria-label="Innholdsfortegnelse">
+    <div class="toc-tittel">Innhold</div>
+    <ol>
+      <li><a href="#forst">Start her — rask sjekk</a></li>
+      <li><a href="#varmer-ikke">Pumpen varmer ikke</a></li>
+      <li><a href="#blinker">Pumpen blinker / feilkode</a></li>
+      <li><a href="#lyder">Rare lyder</a></li>
+      <li><a href="#ising">Ising og vannlekkasje</a></li>
+      <li><a href="#selv-vs-proff">Selv vs. tekniker</a></li>
+      <li><a href="#faq">Vanlige spørsmål</a></li>
+    </ol>
+  </nav>
+
+  <div class="artikkel-tekst">
+    <h2 id="forst">Start her — rask sjekk før du gjør noe annet</h2>
+    <p>Før du feilsøker noe spesifikt, gå gjennom denne raske sjekklisten. Den løser et overraskende stort antall problemer:</p>
+    <ul>
+      <li><strong>Er filtrene rene?</strong> Skittent filter er årsak nummer én til dårlig varme. Se <a href="/varmepumpe/varmepumpe-vedlikehold/">vedlikehold</a>.</li>
+      <li><strong>Står pumpen i riktig modus?</strong> Varmemodus (sol-symbol), ikke kjøling (snøkrystall) eller vifte.</li>
+      <li><strong>Er temperaturen satt høyt nok?</strong> Sjekk fjernkontrollen.</li>
+      <li><strong>Er det strøm?</strong> Sjekk sikring og at utedelen får strøm.</li>
+      <li><strong>Har du prøvd en tilbakestilling?</strong> Slå av på stikkontakt/sikring i 1 minutt, slå på igjen.</li>
+    </ul>
+
+    <div class="info-boks">
+      <p><strong>Tips:</strong> Ha bruksanvisningen for din modell tilgjengelig. Feilkoder og blinkemønstre er modellspesifikke, og manualen forklarer akkurat hva din pumpe forsøker å fortelle deg.</p>
+    </div>
+
+    <h2 id="varmer-ikke">Problem: Pumpen varmer ikke (godt nok)</h2>
+    <div class="feil-blokk">
+      <h3>🌡️ Pumpen går, men varmer dårlig</h3>
+      <div class="sjekk">Sjekk i denne rekkefølgen:</div>
+      <ul>
+        <li>Rengjør filtrene — vanligste årsak</li>
+        <li>Rengjør utedelen for løv, støv og snø</li>
+        <li>Sjekk at innedelen ikke er blokkert av møbler/gardiner</li>
+        <li>Kontroller at det ikke er ekstremt kaldt ute (se <a href="/varmepumpe/varmepumpe-vinter/">vinterguiden</a>)</li>
+        <li>Vurder om pumpen er for liten — se <a href="/varmepumpe/varmepumpe-storrelse/">dimensjonering</a></li>
+      </ul>
+      <div class="sjekk">Hvis ingenting hjelper:</div>
+      <ul>
+        <li>Gradvis dårligere varme over tid kan tyde på kjølemedium-lekkasje — krever tekniker</li>
+      </ul>
+    </div>
+
+    <h2 id="blinker">Problem: Pumpen blinker eller viser feilkode</h2>
+    <div class="feil-blokk">
+      <h3>💡 Blinkende lys på innedelen</h3>
+      <p style="font-size:14px;margin-bottom:10px">Blinkende lys er nesten alltid en feilkode. Antall blink, fargen eller et tall i displayet forteller hva som er galt.</p>
+      <div class="sjekk">Slik går du frem:</div>
+      <ul>
+        <li>Noter blinkemønsteret (antall blink, farge, intervall)</li>
+        <li>Slå opp koden i bruksanvisningen for din modell</li>
+        <li>Prøv en tilbakestilling: strøm av i 1 minutt, så på igjen</li>
+        <li>Forsvinner koden? Da var det trolig en midlertidig glitch</li>
+        <li>Kommer den tilbake? Noter koden og kontakt tekniker</li>
+      </ul>
+    </div>
+    <div class="advarsel-boks">
+      <span aria-hidden="true" style="font-size:20px;flex-shrink:0;margin-top:1px">⚠️</span>
+      <p><strong>Vanlige feilkode-årsaker:</strong> sensorfeil, kommunikasjonsfeil mellom inne- og utedel, problemer med kjølemedium-trykk, eller varsel om at det er på tide med service. Kodene er merkespesifikke — samme blinkemønster betyr ulike ting på <a href="/varmepumpe/mitsubishi/">Mitsubishi</a>, <a href="/varmepumpe/daikin/">Daikin</a> og andre merker.</p>
+    </div>
+
+    <h2 id="lyder">Problem: Rare lyder</h2>
+    <div class="feil-blokk">
+      <h3>🔊 Uvante lyder fra pumpen</h3>
+      <div class="sjekk">Normale lyder (ingen grunn til bekymring):</div>
+      <ul>
+        <li>Klikk ved start/stopp</li>
+        <li>Sus eller «whoosh» under avriming om vinteren</li>
+        <li>Lett risling av kjølemedium</li>
+        <li>Vifte som varierer i hastighet</li>
+      </ul>
+      <div class="sjekk">Lyder som krever oppmerksomhet:</div>
+      <ul>
+        <li>Skraping eller metallisk gnissing — kan være vifteblad eller lager</li>
+        <li>Kraftig vibrasjon — sjekk om utedelen står støtt (se <a href="/varmepumpe/varmepumpe-stoy/">støyguiden</a>)</li>
+        <li>Høyfrekvent pip eller summing fra kompressoren</li>
+        <li>Rasling av løse deler</li>
+      </ul>
+    </div>
+
+    <h2 id="ising">Problem: Ising og vannlekkasje</h2>
+    <div class="feil-blokk">
+      <h3>🧊 Utedelen iser eller det drypper vann</h3>
+      <div class="sjekk">Normalt:</div>
+      <ul>
+        <li>Lett rim/is på utedelen i fuktig kulde</li>
+        <li>Damp og smeltevann under avriming</li>
+        <li>Drypping av kondensvann fra utedelen</li>
+      </ul>
+      <div class="sjekk">Problem:</div>
+      <ul>
+        <li>Utedelen fryser helt til gjentatte ganger</li>
+        <li>Avriming hvert 20.–30. minutt</li>
+        <li>Vann som drypper fra <em>innedelen</em> inne i rommet — ofte tett kondensavløp</li>
+      </ul>
+      <p style="font-size:14px;margin-top:10px">Mer om ising i <a href="/varmepumpe/varmepumpe-vinter/">varmepumpe om vinteren</a>.</p>
+    </div>
+
+    <h2 id="selv-vs-proff">Hva du kan fikse selv vs. når du må ringe tekniker</h2>
+    <div class="selv-vs-proff">
+      <div class="svp-kort selv">
+        <div class="svp-tittel">✅ Dette kan du gjøre selv</div>
+        <ul class="svp-liste">
+          <li>Rengjøre filtre og utedel</li>
+          <li>Fjerne snø og is rundt utedelen</li>
+          <li>Sjekke modus og innstillinger</li>
+          <li>Tilbakestille via av/på</li>
+          <li>Bytte batterier i fjernkontroll</li>
+          <li>Slå opp feilkode i manual</li>
+        </ul>
+      </div>
+      <div class="svp-kort proff">
+        <div class="svp-tittel">🔧 Ring sertifisert tekniker</div>
+        <ul class="svp-liste">
+          <li>Mistanke om kjølemedium-lekkasje</li>
+          <li>Vedvarende feilkode etter reset</li>
+          <li>Vann- eller oljelekkasje</li>
+          <li>Brent lukt eller røyk</li>
+          <li>Kraftige ulyder fra kompressor</li>
+          <li>Alt som krever demontering</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="rod-boks">
+      <span aria-hidden="true" style="font-size:20px;flex-shrink:0;margin-top:1px">⚖️</span>
+      <p><strong>Viktig:</strong> Alt som involverer kjølemedium krever F-gass-sertifikat — det er lovpålagt og kan ikke gjøres selv. Ved brent lukt eller røyk, slå av pumpen umiddelbart og kontakt tekniker. Ikke prøv å demontere inne- eller utedel på egen hånd.</p>
+    </div>
+
+    <h2 id="faq" style="margin-top:40px">Vanlige spørsmål</h2>
+    <div class="faq-element">
+      <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-1">Hvorfor varmer ikke varmepumpen min?<span class="faq-pil" aria-hidden="true">▼</span></button>
+      <div class="faq-svar" id="faq-1"><p>De vanligste årsakene er: skittent filter som kveler luftstrømmen, feil modus eller for lav temperaturinnstilling, isete utedel, eller at det er ekstremt kaldt ute. Sjekk først at filtrene er rene og at pumpen står i varmemodus. Hjelper ikke det, og pumpen er gammel, kan det være kjølemedium-lekkasje som krever tekniker. Se også <a href="/varmepumpe/varmepumpe-vinter/">varmepumpe om vinteren</a>.</p></div>
+    </div>
+    <div class="faq-element">
+      <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-2">Hva betyr det når varmepumpen blinker?<span class="faq-pil" aria-hidden="true">▼</span></button>
+      <div class="faq-svar" id="faq-2"><p>Blinkende lys er som regel en feilkode. Antall blink eller fargen indikerer hvilken feil det gjelder. Slå opp blinkemønsteret i bruksanvisningen for din modell — der står hva koden betyr. Vanlige årsaker er sensorfeil, kommunikasjonsfeil mellom inne- og utedel, eller behov for service.</p></div>
+    </div>
+    <div class="faq-element">
+      <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-3">Hva kan jeg fikse selv på varmepumpen?<span class="faq-pil" aria-hidden="true">▼</span></button>
+      <div class="faq-svar" id="faq-3"><p>Du kan trygt rengjøre filtre og utedel, fjerne snø og is rundt utedelen, sjekke innstillinger og modus, tilbakestille pumpen via av/på, og bytte batterier i fjernkontrollen. Alt som involverer kjølemedium, elektronikk eller demontering må overlates til sertifisert tekniker. Se <a href="/varmepumpe/varmepumpe-vedlikehold/">vedlikeholdsguiden</a>.</p></div>
+    </div>
+    <div class="faq-element">
+      <button class="faq-spørsmål" aria-expanded="false" aria-controls="faq-4">Når må jeg ringe servicetekniker til varmepumpen?<span class="faq-pil" aria-hidden="true">▼</span></button>
+      <div class="faq-svar" id="faq-4"><p>Ring tekniker ved: vedvarende feilkoder etter tilbakestilling, mistanke om kjølemedium-lekkasje (gradvis dårligere varme), vann- eller oljelekkasje, brent lukt, kraftige ulyder fra kompressoren, eller hvis utedelen fryser helt til gjentatte ganger. Alt med kjølemedium krever F-gass-sertifikat.</p></div>
+    </div>
+
+    <h2 style="margin-top:40px">Oppsummering</h2>
+    <p>De fleste varmepumpe-problemer har enkle løsninger: start alltid med rene filtre, riktig modus og en tilbakestilling. Blinkende lys er feilkoder — slå dem opp i manualen. Du kan trygt rengjøre, resette og bytte batterier selv, men alt med kjølemedium, elektronikk eller demontering krever sertifisert tekniker. Forebygg de fleste feil med jevnlig <a href="/varmepumpe/varmepumpe-vedlikehold/">vedlikehold</a>, og les om hva som påvirker <a href="/varmepumpe/varmepumpe-levetid/">levetiden</a>.</p>
+  </div>
+
+  <div style="margin-top:36px;padding-top:24px;border-top:1px solid var(--border)">
+    <h2 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--grønn-mørk);margin-bottom:14px">Les også</h2>
+    <div class="relaterte-grid">
+      <a href="/varmepumpe/varmepumpe-vedlikehold/" class="relatert-kort">
+        <div class="relatert-ikon" aria-hidden="true">🧰</div>
+        <div class="relatert-navn">Vedlikehold — forebygg de fleste feil</div>
+        <div class="relatert-pil">Les guide →</div>
+      </a>
+      <a href="/varmepumpe/varmepumpe-vinter/" class="relatert-kort">
+        <div class="relatert-ikon" aria-hidden="true">❄️</div>
+        <div class="relatert-navn">Varmepumpe om vinteren — ising og avriming</div>
+        <div class="relatert-pil">Les guide →</div>
+      </a>
+      <a href="/varmepumpe/varmepumpe-stoy/" class="relatert-kort">
+        <div class="relatert-ikon" aria-hidden="true">🔇</div>
+        <div class="relatert-navn">Varmepumpe støy — hva lydene betyr</div>
+        <div class="relatert-pil">Les guide →</div>
+      </a>
+      <a href="/varmepumpe/varmepumpe-levetid/" class="relatert-kort">
+        <div class="relatert-ikon" aria-hidden="true">⏳</div>
+        <div class="relatert-navn">Levetid — når lønner reparasjon seg?</div>
+        <div class="relatert-pil">Les guide →</div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<aside class="artikkel-sidebar" aria-label="Tilleggsinformasjon">
+  <div class="widget">
+    <div class="widget-header">⚡ Strømpris nå</div>
+    <div class="widget-innhold" style="text-align:center">
+      <div style="font-size:26px;font-weight:700;color:var(--grønn-mid);line-height:1" class="strom-pris">—</div>
+      <div style="font-size:12px;color:var(--grå-tekst);margin-top:4px">kr/kWh · NO1 (Østlandet)</div>
+    </div>
+  </div>
+  <div class="widget">
+    <div class="widget-header">🔍 Feilsøking kort</div>
+    <div class="widget-innhold">
+      <div style="font-size:13px;color:var(--tekst-sekundær);line-height:1.8">
+        <div style="padding:5px 0;border-bottom:1px solid var(--grå-mid)">1️⃣ Rengjør filteret</div>
+        <div style="padding:5px 0;border-bottom:1px solid var(--grå-mid)">2️⃣ Sjekk modus</div>
+        <div style="padding:5px 0;border-bottom:1px solid var(--grå-mid)">3️⃣ Tilbakestill av/på</div>
+        <div style="padding:5px 0">4️⃣ Slå opp feilkode</div>
+      </div>
+    </div>
+  </div>
+  <div class="widget">
+    <div class="widget-header">📋 Hopp til</div>
+    <div class="widget-innhold lenke-liste">
+      <a href="#forst">Rask sjekk <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#varmer-ikke">Varmer ikke <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#blinker">Blinker/feilkode <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#selv-vs-proff">Selv vs. tekniker <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a href="#faq">Spørsmål & svar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></a>
+    </div>
+  </div>
+  <div class="widget">
+    <div class="widget-header">✍️ Om forfatteren</div>
+    <div class="widget-innhold">
+      <div style="display:flex;gap:10px;align-items:flex-start">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--grønn-mørk);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0">ES</div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:var(--sort);margin-bottom:2px">Erik Svendsen</div>
+          <div style="font-size:12px;color:var(--grønn-mid);margin-bottom:6px">Energirådgiver</div>
+          <div style="font-size:12px;color:var(--tekst-sekundær);line-height:1.55">15+ år erfaring. <a href="/om/" style="color:var(--grønn-mid)">Les mer →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-navn">Varme<em>Guiden</em></div>
+        <p class="footer-beskrivelse">Uavhengig norsk guide til varmepumper, hyttevarme og energieffektiv oppvarming.</p>
+        <p class="footer-oppdatert">Redaktør: Erik Svendsen · Sist oppdatert: juni 2026</p>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Guider</h4>
+        <a href="/varmepumpe/">Varmepumper</a>
+        <a href="/varmepumpe/luft-til-luft/">Luft til luft</a>
+        <a href="/varmepumpe/luft-til-vann/">Luft til vann</a>
+        <a href="/varmepumpe/luft-til-luft-vs-luft-til-vann/">Luft/luft vs luft/vann</a>
+        <a href="/varmepumpe/bergvarme/">Bergvarme</a>
+        <a href="/varmepumpe/varmepumpe-pris/">Varmepumpe pris</a>
+        <a href="/varmepumpe/varmepumpe-tilbud/">Varmepumpe tilbud</a>
+        <a href="/varmepumpe/varmepumpe-stromforbruk/">Varmepumpe strømforbruk</a>
+        <a href="/varmepumpe/varmepumpe-storrelse/">Varmepumpe størrelse</a>
+        <a href="/varmepumpe/varmepumpe-levetid/">Varmepumpe levetid</a>
+        <a href="/varmepumpe/varmepumpe-test/">Varmepumpe test</a>
+        <a href="/varmepumpe/cop-scop-forklart/">COP og SCOP</a>
+        <a href="/varmepumpe/varmepumpe-vs-elektrisk/">Varmepumpe vs panelovn</a>
+        <a href="/varmepumpe/varmepumpe-installasjon/">Installasjon</a>
+        <a href="/varmepumpe/varmepumpe-vinter/">Varmepumpe om vinteren</a>
+        <a href="/varmepumpe/varmepumpe-feilsoking/">Feilsøking</a>
+        <a href="/varmepumpe/varmepumpe-stoy/">Varmepumpe støy</a>
+        <a href="/varmepumpe/varmepumpe-vedlikehold/">Vedlikehold</a>
+        <a href="/varmepumpe/mitsubishi/">Mitsubishi</a>
+        <a href="/varmepumpe/daikin/">Daikin</a>
+        <a href="/varmepumpe/panasonic/">Panasonic</a>
+        <a href="/varmepumpe/samsung/">Samsung</a>
+        <a href="/varmepumpe/fujitsu/">Fujitsu</a>
+        <a href="/varmepumpe/beste-varmepumpe/">Beste varmepumpe</a>
+        <a href="/gulvvarme/">Gulvvarme</a>
+        <a href="/hyttevarme/">Hyttevarme</a>
+        <a href="/enova/">ENOVA støtte</a>
+        <a href="/stromsparing/">Strømsparing</a>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Ressurser</h4>
+        <a href="https://enova.no" target="_blank" rel="noopener noreferrer">ENOVA.no</a>
+        <a href="https://www.nve.no" target="_blank" rel="noopener noreferrer">NVE.no</a>
+        <a href="https://www.hvakosterstrommen.no" target="_blank" rel="noopener noreferrer">Strømpriser nå</a>
+        <a href="https://dibk.no" target="_blank" rel="noopener noreferrer">DiBK.no</a>
+      </div>
+      <div class="footer-kolonne">
+        <h4>Om nettstedet</h4>
+        <a href="/om/">Om VarmeGuiden</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/om/">Annonsepolicy</a>
+        <a href="/om/">Personvern</a>
+      </div>
+    </div>
+    <div class="footer-bunn">
+      <p class="footer-kopi">© 2026 VarmeGuiden.com — Uavhengig informasjonsside om oppvarming i Norge</p>
+      <p class="footer-ansvarsfraskrivelse">Noen lenker kan være tilknyttede lenker. Les vår <a href="/om/">annonsepolicy</a>.</p>
+    </div>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>
