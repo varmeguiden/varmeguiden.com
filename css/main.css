@@ -348,3 +348,7 @@ ul, ol { padding-left: 1.5rem; }
   .kort-grid { grid-template-columns: 1fr; }
   .enova-steps { grid-template-columns: 1fr; }
 }
+
+/* === Lese-fremgang (прогресс чтения) === */
+.lese-fremgang{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--grønn-mid),var(--oransje));z-index:9999;transition:width .1s ease-out;pointer-events:none}
+@media(max-width:640px){.lese-fremgang{height:4px}}

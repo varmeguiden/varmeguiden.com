@@ -296,7 +296,7 @@
 
     <h2 id="vinter">Strømforbruk om vinteren</h2>
     <p>Forbruket er ikke jevnt fordelt over året. Om vinteren stiger det kraftig fordi varmebehovet er størst <em>og</em> fordi COP synker når det blir kaldt. På de kaldeste dagene kan en luft til luft pumpe ha COP ned mot 2,0 — den bruker da mer strøm per varmeenhet enn på en mild høstdag med COP 5,0.</p>
-    <p>Likevel bruker pumpen alltid mindre strøm enn panelovner, som har virkningsgrad 1,0 uansett. Mer om dette i <a href="/varmepumpe/varmepumpe-vinter/">varmepumpe om vinteren</a>.</p>
+    <p>Likevel bruker pumpen alltid mindre strøm enn panelovner, som har virkningsgrad 1,0 uansett. Mer om dette i varmepumpe om vinteren.</p>
 
     <div class="advarsel-boks">
       <span aria-hidden="true" style="font-size:20px;flex-shrink:0;margin-top:1px">⚠️</span>
@@ -311,6 +311,64 @@
       <li><strong>Velg riktig SCOP</strong> ved kjøp — en effektiv modell sparer strøm i 15 år. Se <a href="/varmepumpe/varmepumpe-test/">varmepumpe test</a> og <a href="/varmepumpe/beste-varmepumpe/">beste varmepumpe</a>.</li>
       <li><strong>Etterisolér boligen</strong> hvis mulig — reduserer hele varmebehovet. Flere tips i <a href="/stromsparing/">strømsparing</a>.</li>
     </ul>
+
+    <div class="besparelse-kalk" style="background:linear-gradient(135deg,#f0faf5,#e8f5f0);border:1px solid var(--grønn-mid);border-radius:var(--radius-lg);padding:24px;margin:28px 0">
+  <div style="font-family:var(--font-hoved);font-size:1.25rem;font-weight:600;color:var(--grønn-mørk);margin-bottom:4px">💰 Besparelseskalkulator</div>
+  <p style="font-size:13px;color:var(--tekst-sekundær);margin-bottom:20px">Regn ut hvor mye du kan spare med varmepumpe. Juster verdiene til din bolig.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:20px" class="kalk-inputs">
+    <div>
+      <label style="font-size:13px;font-weight:600;color:var(--sort);display:block;margin-bottom:6px">Boligstørrelse: <span id="kalk-areal-val" style="color:var(--grønn-mid)">120</span> m²</label>
+      <input type="range" id="kalk-areal" min="40" max="300" value="120" step="10" style="width:100%;accent-color:var(--grønn-mid)">
+    </div>
+    <div>
+      <label style="font-size:13px;font-weight:600;color:var(--sort);display:block;margin-bottom:6px">Strømpris: <span id="kalk-pris-val" style="color:var(--grønn-mid)">1,20</span> kr/kWh</label>
+      <input type="range" id="kalk-pris" min="0.3" max="4" value="1.2" step="0.1" style="width:100%;accent-color:var(--grønn-mid)">
+    </div>
+    <div>
+      <label style="font-size:13px;font-weight:600;color:var(--sort);display:block;margin-bottom:6px">Varmepumpens SCOP: <span id="kalk-scop-val" style="color:var(--grønn-mid)">3,5</span></label>
+      <input type="range" id="kalk-scop" min="2.5" max="5.3" value="3.5" step="0.1" style="width:100%;accent-color:var(--grønn-mid)">
+    </div>
+    <div>
+      <label style="font-size:13px;font-weight:600;color:var(--sort);display:block;margin-bottom:6px">Pumpens dekningsgrad: <span id="kalk-dekn-val" style="color:var(--grønn-mid)">70</span> %</label>
+      <input type="range" id="kalk-dekn" min="40" max="90" value="70" step="5" style="width:100%;accent-color:var(--grønn-mid)">
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div style="background:white;border-radius:var(--radius);padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--grå-tekst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Spart per år</div>
+      <div id="kalk-spart" style="font-size:1.8rem;font-weight:700;color:var(--grønn-mid);line-height:1.1">— kr</div>
+    </div>
+    <div style="background:white;border-radius:var(--radius);padding:16px;text-align:center">
+      <div style="font-size:12px;color:var(--grå-tekst);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px">Nedbetalt på</div>
+      <div id="kalk-nedbetalt" style="font-size:1.8rem;font-weight:700;color:var(--oransje);line-height:1.1">— år</div>
+    </div>
+  </div>
+  <p style="font-size:11px;color:var(--grå-tekst);margin-top:14px;line-height:1.5">Anslag basert på et oppvarmingsbehov på ca. 100 kWh/m² i året og en pumpepris på ca. 25 000 kr montert. Faktisk besparelse avhenger av isolasjon, klima, vaner og strømpris. Bruk dette som en pekepinn, ikke en fasit.</p>
+</div>
+<script>
+(function(){
+  var ids=['areal','pris','scop','dekn'];
+  function el(id){return document.getElementById('kalk-'+id);}
+  function regn(){
+    var areal=+el('areal').value, pris=+el('pris').value, scop=+el('scop').value, dekn=+el('dekn').value/100;
+    el('areal-val').textContent=areal;
+    el('pris-val').textContent=pris.toFixed(2).replace('.',',');
+    el('scop-val').textContent=scop.toFixed(1).replace('.',',');
+    el('dekn-val').textContent=Math.round(dekn*100);
+    var behov=areal*100; /* kWh/år oppvarmingsbehov */
+    var dekket=behov*dekn;
+    var spartKwh=dekket*(1-1/scop);
+    var spartKr=spartKwh*pris;
+    var pumpepris=25000;
+    var aar=spartKr>0?pumpepris/spartKr:0;
+    document.getElementById('kalk-spart').textContent=Math.round(spartKr/100)*100+' kr';
+    document.getElementById('kalk-nedbetalt').textContent=(aar>0?aar.toFixed(1).replace('.',','):'—')+' år';
+  }
+  ids.forEach(function(id){var e=el(id);if(e)e.addEventListener('input',regn);});
+  regn();
+})();
+</script>
+
 
     <h2 id="faq" style="margin-top:40px">Vanlige spørsmål</h2>
     <div class="faq-element">
@@ -331,7 +389,7 @@
     </div>
 
     <h2 style="margin-top:40px">Oppsummering</h2>
-    <p>En luft til luft varmepumpe bruker typisk 3 000–5 000 kWh strøm i året i en enebolig — og leverer 3–5 ganger så mye varme. Regn ut ditt eget forbruk med formelen varmebehov ÷ SCOP. Forbruket stiger om vinteren, men pumpen er alltid mer effektiv enn panelovner. Velg høy <a href="/varmepumpe/cop-scop-forklart/">SCOP</a>, hold filtrene rene og la pumpen gå jevnt for lavest mulig forbruk. Se <a href="/varmepumpe/beste-varmepumpe/">beste varmepumpe</a> og <a href="/varmepumpe/varmepumpe-pris/">priser</a>.</p>
+    <p>En luft til luft varmepumpe bruker typisk 3 000–5 000 kWh strøm i året i en enebolig — og leverer 3–5 ganger så mye varme. Regn ut ditt eget forbruk med formelen varmebehov ÷ SCOP. Forbruket stiger om vinteren, men pumpen er alltid mer effektiv enn panelovner. Velg høy SCOP, hold filtrene rene og la pumpen gå jevnt for lavest mulig forbruk. Se beste varmepumpe og <a href="/varmepumpe/varmepumpe-pris/">priser</a>.</p>
   </div>
 
   <div style="margin-top:36px;padding-top:24px;border-top:1px solid var(--border)">

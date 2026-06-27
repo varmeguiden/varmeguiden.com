@@ -4,6 +4,26 @@
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
+  /* Lese-fremgang ved scroll */
+  (function () {
+    var artikkel = document.querySelector('.artikkel-hoved') || document.querySelector('main');
+    if (!artikkel) return;
+    var bar = document.createElement('div');
+    bar.className = 'lese-fremgang';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+    function oppdater() {
+      var rekt = artikkel.getBoundingClientRect();
+      var total = artikkel.offsetHeight - window.innerHeight;
+      var lest = Math.min(Math.max(-rekt.top, 0), total);
+      var pst = total > 0 ? (lest / total) * 100 : 0;
+      bar.style.width = pst + '%';
+    }
+    window.addEventListener('scroll', oppdater, { passive: true });
+    window.addEventListener('resize', oppdater, { passive: true });
+    oppdater();
+  })();
+
 
   /* --- Strømpris API --- */
   lastStrømpris();
