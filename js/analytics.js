@@ -1,15 +1,21 @@
-/* VarmeGuiden — analyse og samtykke (GDPR-vennlig, streng modus)
-   Google Analytics lastes IKKE før brukeren aktivt godtar.
-   Bytt ut G-Q5L7YT7HVF med din egen Measurement ID fra Google Analytics. */
+/* VarmeGuiden — analyse og samtykke (GDPR, Google Consent Mode v2)
+   gtag.js lastes umiddelbart, men med samtykke satt til "denied" som standard.
+   Før samtykke: ingen informasjonskapsler, kun anonyme signaler (cookieless pings).
+   Etter "Godta": consent oppdateres til "granted" og full måling starter.
+   Measurement ID: G-Q5L7YT7HVF */
 (function () {
-  var GA_ID = 'G-Q5L7YT7HVF';               // ← BYTT UT med din Measurement ID
-  var LAGRING = 'vg_samtykke';            // localStorage-nøkkel
-  var gyldigDager = 180;                  // hvor lenge valget huskes
+  var GA_ID = 'G-Q5L7YT7HVF';
+  var LAGRING = 'vg_samtykke';
+  var gyldigDager = 180;
 
-  /* ---- Hjelpere for lagring med utløp ---- */
+  /* ---- dataLayer + gtag tilgjengelig umiddelbart ---- */
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  /* ---- Lagring av valg med utløp ---- */
   function lagreValg(verdi) {
-    var data = { v: verdi, t: Date.now() };
-    try { localStorage.setItem(LAGRING, JSON.stringify(data)); } catch (e) {}
+    try { localStorage.setItem(LAGRING, JSON.stringify({ v: verdi, t: Date.now() })); } catch (e) {}
   }
   function hentValg() {
     try {
@@ -22,19 +28,55 @@
     } catch (e) { return null; }
   }
 
-  /* ---- Last Google Analytics (kun ved samtykke) ---- */
-  function lastAnalytics() {
-    if (!GA_ID || GA_ID.indexOf('XXXX') !== -1) return; // ingen gyldig ID satt ennå
+  /* ---- Consent Mode: standard = denied (settes FØR gtag.js lastes) ---- */
+  var tidligereSamtykke = hentValg();
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied',
+    wait_for_update: 500
+  });
+
+  /* ---- Last gtag.js umiddelbart (kjører i denied-modus til samtykke) ---- */
+  (function lastGtag() {
+    if (!GA_ID || GA_ID.indexOf('XXXX') !== -1) return;
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_ID, { anonymize_ip: true });
-    sporHendelser();
+  })();
+
+  /* ---- Hvis bruker tidligere har godtatt: oppgrader til granted ---- */
+  if (tidligereSamtykke === 'godta') {
+    gtag('consent', 'update', {
+      ad_storage: 'granted',
+      ad_user_data: 'granted',
+      ad_personalization: 'granted',
+      analytics_storage: 'granted'
+    });
+  }
+
+  /* ---- Sporing av nøkkelhendelser ---- */
+  function sporHendelser() {
+    var kalkInputs = document.querySelectorAll('.besparelse-kalk input[type=range], .gulvvarme-kalk input[type=range]');
+    if (kalkInputs.length) {
+      var kalkBrukt = false;
+      kalkInputs.forEach(function (inp) {
+        inp.addEventListener('change', function () {
+          if (kalkBrukt) return;
+          kalkBrukt = true;
+          gtag('event', 'kalkulator_brukt', { side: location.pathname });
+        });
+      });
+    }
+    document.querySelectorAll('.faq-spørsmål').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        gtag('event', 'faq_apnet', { side: location.pathname });
+      });
+    });
   }
 
   /* ---- Banner-stil ---- */
@@ -68,7 +110,7 @@
     boks.setAttribute('aria-label', 'Samtykke til informasjonskapsler');
     boks.innerHTML =
       '<p>Vi bruker informasjonskapsler til anonym statistikk for å forbedre nettstedet. '
-      + 'Ingen data deles før du godtar. Les mer i vår <a href="/personvern/">personvernerklæring</a>.</p>'
+      + 'Ingen informasjonskapsler settes før du godtar. Les mer i vår <a href="/personvern/">personvernerklæring</a>.</p>'
       + '<div class="vg-samtykke-knapper">'
       + '<button class="vg-avsla" type="button">Avslå</button>'
       + '<button class="vg-godta" type="button">Godta</button>'
@@ -77,7 +119,12 @@
 
     boks.querySelector('.vg-godta').addEventListener('click', function () {
       lagreValg('godta');
-      lastAnalytics();
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
       boks.remove();
     });
     boks.querySelector('.vg-avsla').addEventListener('click', function () {
@@ -86,36 +133,11 @@
     });
   }
 
-
-  /* ---- Sporing av nøkkelhendelser (kun når GA er lastet) ---- */
-  function sporHendelser() {
-    // Kalkulator-bruk: når brukeren drar i en glidebryter
-    var kalkInputs = document.querySelectorAll('.besparelse-kalk input[type=range], .gulvvarme-kalk input[type=range]');
-    if (kalkInputs.length) {
-      var kalkBrukt = false;
-      kalkInputs.forEach(function (inp) {
-        inp.addEventListener('change', function () {
-          if (kalkBrukt || typeof window.gtag !== 'function') return;
-          kalkBrukt = true; // teller bare én gang per side
-          window.gtag('event', 'kalkulator_brukt', { side: location.pathname });
-        });
-      });
-    }
-    // FAQ-åpning
-    document.querySelectorAll('.faq-spørsmål').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        if (typeof window.gtag !== 'function') return;
-        window.gtag('event', 'faq_apnet', { side: location.pathname });
-      });
-    });
-  }
-
   /* ---- Start ---- */
   function start() {
+    sporHendelser();
     var valg = hentValg();
-    if (valg === 'godta') { lastAnalytics(); }
-    else if (valg === 'avsla') { /* gjør ingenting */ }
-    else { visBanner(); }
+    if (valg !== 'godta' && valg !== 'avsla') { visBanner(); }
   }
 
   if (document.readyState === 'loading') {
