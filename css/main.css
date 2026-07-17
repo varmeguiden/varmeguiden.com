@@ -352,3 +352,723 @@ ul, ol { padding-left: 1.5rem; }
 /* === Lese-fremgang (прогресс чтения) === */
 .lese-fremgang{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--grønn-mid),var(--oransje));z-index:9999;transition:width .1s ease-out;pointer-events:none}
 @media(max-width:640px){.lese-fremgang{height:4px}}
+
+
+/* === ARTIKKEL-STILER (konsolidert 2026-07-17) === */
+.artikkel-wrapper { max-width: var(--maks-bredde); margin: 0 auto; padding: 32px 24px; display: grid; grid-template-columns: 1fr 290px; gap: 48px; align-items: start; }
+.artikkel-hoved { min-width: 0; }
+.artikkel-sidebar { min-width: 0; position: sticky; top: 80px; }
+.artikkel-header { margin-bottom: 24px; }
+.artikkel-kategori { font-size: 12px; font-weight: 700; color: var(--oransje); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.artikkel-h1 { font-family: var(--font-hoved); font-size: 2rem; font-weight: 600; line-height: 1.2; color: var(--sort); margin-bottom: 14px; letter-spacing: -0.3px; }
+.artikkel-ingress { font-size: 1.05rem; color: var(--tekst-sekundær); line-height: 1.65; margin-bottom: 18px; font-family: var(--font-hoved); font-style: italic; }
+.artikkel-meta { display: flex; align-items: center; gap: 10px; padding: 14px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 24px; flex-wrap: wrap; }
+.meta-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--grønn-mørk); color: white; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+.meta-tekst { flex: 1; min-width: 120px; }
+.meta-navn { font-size: 13px; font-weight: 600; color: var(--sort); }
+.meta-info { font-size: 12px; color: var(--grå-tekst); }
+.meta-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+.meta-badge { font-size: 11px; background: var(--grå-lys); border: 1px solid var(--border); color: var(--grå-tekst); padding: 2px 10px; border-radius: 100px; }
+.hero-bilde { width: 100%; border-radius: var(--radius-lg); margin-bottom: 8px; display: block; aspect-ratio: 16/9; object-fit: cover; background: var(--grå-mid); }
+.bilde-tekst { font-size: 12px; color: var(--grå-tekst); text-align: center; margin-bottom: 28px; font-style: italic; }
+.artikkel-bilde { width: 100%; border-radius: var(--radius-lg); margin: 20px 0 6px; display: block; object-fit: cover; background: var(--grå-mid); aspect-ratio: 16/9; }
+.toc { background: var(--grå-lys); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 28px; }
+.toc-tittel { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--grønn-mørk); margin-bottom: 12px; }
+.toc ol { padding-left: 0; list-style: none; counter-reset: toc; }
+.toc li { margin-bottom: 7px; counter-increment: toc; display: flex; gap: 8px; }
+.toc li::before { content: counter(toc) "."; color: var(--grønn-mid); font-weight: 700; font-size: 13px; flex-shrink: 0; min-width: 18px; }
+.toc a { font-size: 14px; color: var(--tekst-sekundær); }
+.toc a:hover { color: var(--grønn-mid); }
+.artikkel-tekst h2 { font-family: var(--font-hoved); font-size: 1.5rem; font-weight: 600; color: var(--sort); margin: 40px 0 14px; padding-top: 8px; border-top: 2px solid var(--grønn-mørk); }
+.artikkel-tekst h3 { font-family: var(--font-ui); font-size: 1.05rem; font-weight: 600; color: var(--sort); margin: 22px 0 10px; }
+.artikkel-tekst p { font-size: 1rem; line-height: 1.8; color: var(--tekst-primær); margin-bottom: 16px; }
+.artikkel-tekst ul, .artikkel-tekst ol { margin-bottom: 16px; padding-left: 22px; }
+.artikkel-tekst li { font-size: 1rem; line-height: 1.75; color: var(--tekst-primær); margin-bottom: 7px; }
+.artikkel-tekst strong { font-weight: 600; color: var(--sort); }
+.artikkel-tekst a { color: var(--grønn-mid); text-decoration: underline; text-underline-offset: 3px; }
+.info-boks { background: #e8f5f0; border-left: 4px solid var(--grønn-mid); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 20px 0; }
+.info-boks p { font-size: 14px; line-height: 1.7; color: var(--tekst-primær); margin: 0; }
+.advarsel-boks { background: #fff8e6; border: 1px solid #f0c844; border-radius: var(--radius-lg); padding: 14px 18px; margin: 20px 0; display: flex; gap: 12px; align-items: flex-start; }
+.advarsel-boks p { font-size: 14px; line-height: 1.65; color: #5a3a00; margin: 0; }
+/* Alternativ-kort */
+    .alternativ-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 20px 0; }
+.alternativ-kort { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.alternativ-kort.anbefalt { border-color: var(--grønn-mid); }
+.alternativ-topp { padding: 16px 20px 12px; display: flex; align-items: center; gap: 14px; background: var(--grå-lys); }
+.alternativ-kort.anbefalt .alternativ-topp { background: #f0faf5; }
+.alternativ-ikon { font-size: 32px; flex-shrink: 0; }
+.alternativ-tittel { font-size: 16px; font-weight: 600; color: var(--sort); }
+.alternativ-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; display: inline-block; margin-top: 3px; }
+.tag-anbefalt { background: var(--grønn-mørk); color: white; }
+.tag-ok { background: var(--grå-mid); color: var(--tekst-sekundær); }
+.tag-begrenset { background: #fff3ee; color: #b83e00; }
+.alternativ-kropp { padding: 16px 20px; }
+.alternativ-tekst { font-size: 14px; color: var(--tekst-sekundær); line-height: 1.65; margin-bottom: 14px; }
+.for-mot { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+.for strong, .mot strong { font-size: 12px; font-weight: 700; display: block; margin-bottom: 5px; }
+.for strong { color: #2d6a0f; }
+.mot strong { color: #c0392b; }
+.for ul, .mot ul { margin: 0; padding-left: 14px; font-size: 13px; color: var(--tekst-sekundær); line-height: 1.6; }
+.alternativ-passer { font-size: 13px; font-weight: 600; color: var(--grønn-mid); padding-top: 10px; border-top: 1px solid var(--border); }
+/* Sammenligningstabel */
+    .tabell-wrapper { overflow-x: auto; margin: 20px 0 8px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.data-tabell { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 500px; }
+.data-tabell th { background: var(--grønn-mørk); color: white; padding: 11px 14px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.4px; }
+.data-tabell td { padding: 11px 14px; border-bottom: 1px solid var(--grå-mid); color: var(--tekst-primær); vertical-align: top; font-size: 14px; }
+.data-tabell tr:last-child td { border-bottom: none; }
+.data-tabell tr:nth-child(even) td { background: var(--grå-lys); }
+.ja-pill { display: inline-block; background: #eaf3de; color: #2d6a0f; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+.nei-pill { display: inline-block; background: #fef0f0; color: #c0392b; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+.delvis-pill { display: inline-block; background: #fff3ee; color: #b83e00; font-weight: 600; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+.tabell-note { font-size: 12px; color: var(--grå-tekst); line-height: 1.55; margin-top: 6px; margin-bottom: 20px; }
+/* Kalkulator */
+    .kalkulator-boks { background: var(--grønn-mørk); border-radius: var(--radius-lg); padding: 22px 24px; margin: 24px 0; }
+.kalkulator-boks h3 { font-size: 14px; font-weight: 600; color: #a8e6c3; margin-bottom: 14px; }
+.kalkulator-rad { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 14px; gap: 12px; }
+.kalkulator-rad:last-child { border-bottom: none; }
+.kalkulator-label { color: rgba(255,255,255,0.6); }
+.kalkulator-verdi { font-weight: 600; color: white; text-align: right; flex-shrink: 0; }
+.kalkulator-total .kalkulator-label { color: white; font-weight: 600; }
+.kalkulator-total .kalkulator-verdi { color: #a8e6c3; }
+.kalkulator-note { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 12px; line-height: 1.5; }
+/* Steg */
+    .steg-liste { margin: 16px 0; }
+.steg { display: flex; gap: 14px; margin-bottom: 16px; }
+.steg-tall { width: 30px; height: 30px; background: var(--grønn-mørk); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.steg-innhold h4 { font-size: 14px; font-weight: 600; color: var(--sort); margin-bottom: 3px; }
+.steg-innhold p { font-size: 14px; color: var(--tekst-sekundær); line-height: 1.6; margin: 0; }
+/* Relaterte */
+    .relaterte-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.relatert-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 14px; text-decoration: none; display: block; transition: background 0.15s; }
+.relatert-kort:hover { background: var(--grå-lys); }
+.relatert-ikon { font-size: 20px; margin-bottom: 6px; }
+.relatert-navn { font-size: 13px; font-weight: 600; color: var(--sort); line-height: 1.35; }
+.relatert-pil { font-size: 12px; color: var(--oransje); margin-top: 4px; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .for-mot { grid-template-columns: 1fr; }
+    }
+@media (max-width: 640px) {
+      .artikkel-wrapper { padding: 20px 16px; }
+      .artikkel-h1 { font-size: 1.65rem; }
+      .artikkel-tekst h2 { font-size: 1.3rem; }
+      .relaterte-grid { grid-template-columns: 1fr; }
+    }
+/* Tilsktudd-kort */
+    .tilskudd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.tilskudd-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px; background: var(--hvit); }
+.tilskudd-kort.fremhevet { border-color: var(--grønn-mid); background: #f0faf5; }
+.tilskudd-ikon { font-size: 30px; margin-bottom: 8px; }
+.tilskudd-tittel { font-size: 15px; font-weight: 600; color: var(--sort); margin-bottom: 8px; }
+.tilskudd-tekst { font-size: 13px; color: var(--tekst-sekundær); line-height: 1.6; margin-bottom: 10px; }
+.tilskudd-tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 100px; background: var(--grå-mid); color: var(--tekst-sekundær); }
+.tilskudd-kort.fremhevet .tilskudd-tag { background: var(--grønn-mørk); color: white; }
+/* Steg-guide */
+    .steg-liste { margin: 16px 0; }
+.steg { display: flex; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.steg:last-child { border-bottom: none; padding-bottom: 0; }
+.steg-tall { width: 36px; height: 36px; background: var(--grønn-mørk); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+.steg-innhold h3 { font-size: 16px !important; font-weight: 600; color: var(--sort); margin-bottom: 6px !important; margin-top: 0 !important; }
+.steg-innhold p { font-size: 14px; color: var(--tekst-sekundær); line-height: 1.65; margin: 0 0 8px; }
+.steg-innhold ul { font-size: 13px; color: var(--tekst-sekundær); margin: 8px 0 0; padding-left: 18px; }
+.steg-innhold li { font-size: 13px; line-height: 1.6; margin-bottom: 4px; }
+/* Sjekkliste */
+    .sjekkliste { background: var(--grå-lys); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px 22px; margin: 24px 0; }
+.sjekkliste h3 { font-size: 14px !important; font-weight: 600; color: var(--sort); margin-bottom: 12px !important; }
+.sjekkliste-rad { display: flex; align-items: flex-start; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--grå-mid); font-size: 14px; line-height: 1.55; }
+.sjekkliste-rad:last-child { border-bottom: none; }
+.sjekkliste-rad strong { color: var(--sort); }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .tilskudd-grid { grid-template-columns: 1fr; }
+    }
+.artikkel-wrapper{max-width:var(--maks-bredde);margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 290px;gap:48px;align-items:start}
+.artikkel-hoved{min-width:0}
+.artikkel-sidebar{min-width:0;position:sticky;top:80px}
+.artikkel-kategori{font-size:12px;font-weight:700;color:var(--oransje);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.artikkel-h1{font-family:var(--font-hoved);font-size:2rem;font-weight:600;line-height:1.2;color:var(--sort);margin-bottom:14px;letter-spacing:-.3px}
+.artikkel-ingress{font-size:1.05rem;color:var(--tekst-sekundær);line-height:1.65;margin-bottom:18px;font-family:var(--font-hoved);font-style:italic}
+.artikkel-meta{display:flex;align-items:center;gap:10px;padding:14px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+.meta-avatar{width:38px;height:38px;border-radius:50%;background:var(--grønn-mørk);color:white;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+.meta-tekst{flex:1;min-width:120px}
+.meta-navn{font-size:13px;font-weight:600;color:var(--sort)}
+.meta-info{font-size:12px;color:var(--grå-tekst)}
+.meta-badges{display:flex;gap:8px;flex-wrap:wrap}
+.meta-badge{font-size:11px;background:var(--grå-lys);border:1px solid var(--border);color:var(--grå-tekst);padding:2px 10px;border-radius:100px}
+.hero-bilde{width:100%;border-radius:var(--radius-lg);margin-bottom:8px;display:block;aspect-ratio:16/9;object-fit:cover;background:var(--grå-mid)}
+.bilde-tekst{font-size:12px;color:var(--grå-tekst);text-align:center;margin-bottom:28px;font-style:italic}
+.artikkel-bilde{width:100%;border-radius:var(--radius-lg);margin:20px 0 6px;display:block;object-fit:cover;background:var(--grå-mid);aspect-ratio:16/9}
+.toc{background:var(--grå-lys);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:28px}
+.toc-tittel{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--grønn-mørk);margin-bottom:12px}
+.toc ol{padding-left:0;list-style:none;counter-reset:toc}
+.toc li{margin-bottom:7px;counter-increment:toc;display:flex;gap:8px}
+.toc li::before{content:counter(toc) ".";color:var(--grønn-mid);font-weight:700;font-size:13px;flex-shrink:0;min-width:18px}
+.toc a{font-size:14px;color:var(--tekst-sekundær)}
+.toc a:hover{color:var(--grønn-mid)}
+.artikkel-tekst h2{font-family:var(--font-hoved);font-size:1.5rem;font-weight:600;color:var(--sort);margin:40px 0 14px;padding-top:8px;border-top:2px solid var(--grønn-mørk)}
+.artikkel-tekst h3{font-family:var(--font-ui);font-size:1.05rem;font-weight:600;color:var(--sort);margin:22px 0 10px}
+.artikkel-tekst p{font-size:1rem;line-height:1.8;color:var(--tekst-primær);margin-bottom:16px}
+.artikkel-tekst ul,.artikkel-tekst ol{margin-bottom:16px;padding-left:22px}
+.artikkel-tekst li{font-size:1rem;line-height:1.75;color:var(--tekst-primær);margin-bottom:7px}
+.artikkel-tekst strong{font-weight:600;color:var(--sort)}
+.artikkel-tekst a{color:var(--grønn-mid);text-decoration:underline;text-underline-offset:3px}
+.info-boks{background:#e8f5f0;border-left:4px solid var(--grønn-mid);border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;margin:20px 0}
+.info-boks p{font-size:14px;line-height:1.7;color:var(--tekst-primær);margin:0}
+.advarsel-boks{background:#fff8e6;border:1px solid #f0c844;border-radius:var(--radius-lg);padding:14px 18px;margin:20px 0;display:flex;gap:12px;align-items:flex-start}
+.advarsel-boks p{font-size:14px;line-height:1.65;color:#5a3a00;margin:0}
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.vs-kort{border-radius:var(--radius-lg);padding:18px;border:1px solid var(--border)}
+.vs-kort.denne{border-color:var(--grønn-mid);background:#f0faf5}
+.vs-tittel{font-size:14px;font-weight:700;color:var(--sort);margin-bottom:10px}
+.vs-liste{font-size:13px;color:var(--tekst-sekundær);line-height:1.75;padding-left:16px;margin:0}
+.tabell-wrapper{overflow-x:auto;margin:20px 0 8px;border-radius:var(--radius-lg);border:1px solid var(--border)}
+.data-tabell{width:100%;border-collapse:collapse;font-size:14px;min-width:440px}
+.data-tabell th{background:var(--grønn-mørk);color:white;padding:11px 14px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.data-tabell td{padding:11px 14px;border-bottom:1px solid var(--grå-mid);color:var(--tekst-primær);vertical-align:top;font-size:14px}
+.data-tabell tr:last-child td{border-bottom:none}
+.data-tabell tr:nth-child(even) td{background:var(--grå-lys)}
+.data-tabell tr.beste-rad td{background:#eaf5ee}
+.tabell-note{font-size:12px;color:var(--grå-tekst);line-height:1.55;margin-top:6px;margin-bottom:20px}
+.kalkulator-boks{background:var(--grønn-mørk);border-radius:var(--radius-lg);padding:22px 24px;margin:24px 0}
+.kalkulator-boks h3{font-size:14px;font-weight:600;color:#a8e6c3;margin-bottom:14px}
+.kalkulator-rad{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:14px;gap:12px}
+.kalkulator-rad:last-child{border-bottom:none}
+.kalkulator-label{color:rgba(255,255,255,.6)}
+.kalkulator-verdi{font-weight:600;color:white;text-align:right}
+.kalkulator-total .kalkulator-label{color:white;font-weight:600}
+.kalkulator-total .kalkulator-verdi{color:#a8e6c3}
+.kalkulator-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:12px;line-height:1.5}
+.rom-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.rom-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px}
+.rom-navn{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.rom-anbefaling{font-size:13px;color:var(--tekst-sekundær);line-height:1.55}
+.steg-liste{margin:16px 0}
+.steg{display:flex;gap:14px;margin-bottom:16px;position:relative}
+.steg:not(:last-child)::after{content:'';position:absolute;left:15px;top:36px;bottom:-8px;width:2px;background:var(--grå-mid)}
+.steg-tall{width:30px;height:30px;background:var(--grønn-mørk);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;z-index:1;margin-top:2px}
+.steg-innhold h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:3px}
+.steg-innhold p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.faq-element{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px;overflow:hidden}
+.faq-spørsmål{width:100%;background:var(--hvit);border:none;padding:15px 18px;text-align:left;font-size:14px;font-weight:600;color:var(--sort);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-ui);transition:background .15s;gap:12px}
+.faq-spørsmål:hover{background:var(--grå-lys)}
+.faq-svar{padding:0 18px 15px;font-size:14px;line-height:1.7;color:var(--tekst-sekundær);display:none}
+.faq-svar a{color:var(--grønn-mid);text-decoration:underline}
+.faq-element.åpen .faq-svar{display:block}
+.faq-element.åpen .faq-spørsmål{background:var(--grå-lys)}
+.faq-pil{transition:transform .2s;font-size:14px;color:var(--grå-tekst);flex-shrink:0}
+.faq-element.åpen .faq-pil{transform:rotate(180deg)}
+.relaterte-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.relatert-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:14px;text-decoration:none;display:block;transition:background .15s}
+.relatert-kort:hover{background:var(--grå-lys)}
+.relatert-ikon{font-size:20px;margin-bottom:6px}
+.relatert-navn{font-size:13px;font-weight:600;color:var(--sort);line-height:1.35}
+.relatert-pil{font-size:12px;color:var(--oransje);margin-top:4px}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.vs-grid{grid-template-columns:1fr}.rom-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}}
+.data-tabell{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}}
+.fordel-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.fordel-kort{border-radius:var(--radius-lg);padding:18px}
+.fordel-kort.ja{border:1px solid var(--grønn-mid);background:#f0faf5}
+.fordel-kort.nei{border:1px solid #f5b7b1;background:#fdecea}
+.fordel-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.fordel-kort.ja .fordel-tittel{color:#2d6a0f}
+.fordel-kort.nei .fordel-tittel{color:#943126}
+.fordel-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.fordel-kort.ja .fordel-liste{color:#2d6a0f}
+.fordel-kort.nei .fordel-liste{color:#943126}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.fordel-grid{grid-template-columns:1fr}}
+/* Hero bilde */
+    .hero-bilde { width: 100%; border-radius: var(--radius-lg); margin-bottom: 8px; display: block; aspect-ratio: 16/9; object-fit: cover; background: var(--grå-mid); }
+/* Innholdsfortegnelse */
+    .toc { background: var(--grå-lys); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 28px; }
+/* Artikkeltekst */
+    .artikkel-tekst h2 { font-family: var(--font-hoved); font-size: 1.5rem; font-weight: 600; color: var(--sort); margin: 40px 0 14px; letter-spacing: -0.2px; padding-top: 8px; border-top: 2px solid var(--grønn-mørk); }
+/* Inline bilder i tekst */
+    .artikkel-bilde { width: 100%; border-radius: var(--radius-lg); margin: 20px 0 6px; display: block; object-fit: cover; background: var(--grå-mid); }
+.artikkel-bilde-liten { width: 100%; border-radius: var(--radius); margin: 16px 0 6px; display: block; object-fit: cover; background: var(--grå-mid); aspect-ratio: 16/9; }
+/* Tabeller */
+    .tabell-wrapper { overflow-x: auto; margin: 20px 0 8px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.data-tabell { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 480px; }
+.scop-pill { display: inline-block; background: #eaf3de; color: #2d6a0f; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+.ulempe-liten { font-size: 12px; color: #c0392b; margin-top: 3px; }
+/* Bokser */
+    .info-boks { background: #e8f5f0; border-left: 4px solid var(--grønn-mid); border-radius: 0 var(--radius) var(--radius) 0; padding: 16px 18px; margin: 20px 0; }
+/* Typekort */
+    .type-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 20px 0; }
+.type-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.type-kort.beste { border-color: var(--grønn-mid); }
+.type-kort-topp { padding: 16px 18px 12px; display: flex; align-items: center; gap: 12px; }
+.type-kort.beste .type-kort-topp { background: #f0faf5; }
+.type-ikon { font-size: 28px; flex-shrink: 0; }
+.type-navn { font-size: 15px; font-weight: 600; color: var(--sort); }
+.type-tag-populær { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 100px; background: var(--grønn-mørk); color: white; display: inline-block; margin-top: 3px; }
+.type-kropp { padding: 0 18px 16px; }
+.type-tekst { font-size: 14px; color: var(--tekst-sekundær); line-height: 1.65; margin-bottom: 12px; }
+.type-for-mot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.type-for strong, .type-mot strong { font-size: 12px; font-weight: 700; display: block; margin-bottom: 4px; }
+.type-for strong { color: #2d6a0f; }
+.type-mot strong { color: #c0392b; }
+.type-for ul, .type-mot ul { margin: 0; padding-left: 14px; font-size: 12px; color: var(--tekst-sekundær); line-height: 1.6; }
+.type-pris { font-size: 13px; font-weight: 600; color: var(--grønn-mid); margin-top: 10px; }
+.kalkulator-total { border-top: 1px solid rgba(255,255,255,0.2) !important; margin-top: 4px; padding-top: 12px !important; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .type-for-mot { grid-template-columns: 1fr; }
+    }
+.kalkulator-boks h3{font-size:14px;font-weight:600;color:#a8e6c3;margin-bottom:14px;margin-top:0!important}
+.data-tabell{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
+.kwh-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.faktor-liste{margin:16px 0}
+.faktor{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.faktor-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.faktor-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.faktor-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.rod-boks{background:#fdecea;border:1px solid #f5b7b1;border-radius:var(--radius-lg);padding:14px 18px;margin:20px 0;display:flex;gap:12px;align-items:flex-start}
+.rod-boks p{font-size:14px;line-height:1.65;color:#943126;margin:0}
+.tegn-liste{margin:16px 0}
+.tegn{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.tegn-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tegn-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.tegn-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.garanti-highlight{background:var(--grønn-mørk);border-radius:var(--radius-lg);padding:22px 24px;margin:20px 0;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.garanti-tall{font-size:52px;font-weight:700;color:#a8e6c3;line-height:1;flex-shrink:0}
+.garanti-tekst h3{font-size:16px;font-weight:600;color:white;margin-bottom:6px}
+.garanti-tekst p{font-size:14px;color:rgba(255,255,255,.7);margin:0;line-height:1.55}
+.modell-grid{display:grid;grid-template-columns:1fr;gap:20px;margin:20px 0}
+.modell-kort{border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden}
+.modell-kort.anbefalt{border-color:var(--grønn-mid)}
+.modell-topp{padding:16px 20px 12px;background:var(--grå-lys);display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modell-kort.anbefalt .modell-topp{background:#f0faf5}
+.modell-navn{font-size:16px;font-weight:600;color:var(--sort)}
+.modell-sub{font-size:13px;color:var(--grå-tekst);margin-top:2px}
+.modell-tag{font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;white-space:nowrap;flex-shrink:0}
+.tag-best{background:#eaf3de;color:#2d6a0f}
+.tag-garanti{background:#0a3d1f;color:#a8e6c3}
+.tag-stor{background:#e6f1fb;color:#1a4a8a}
+.modell-stats{display:flex;gap:16px;padding:12px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.stat{text-align:center}
+.stat-tall{font-size:20px;font-weight:700;color:var(--grønn-mid);line-height:1}
+.stat-label{font-size:11px;color:var(--grå-tekst);margin-top:2px}
+.modell-tekst{padding:14px 20px;font-size:14px;line-height:1.65;color:var(--tekst-primær)}
+.for-mot{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px 16px}
+.for strong,.mot strong{font-size:12px;font-weight:700;display:block;margin-bottom:4px}
+.for strong{color:#2d6a0f}
+.mot strong{color:#c0392b}
+.for ul,.mot ul{margin:0;padding-left:14px;font-size:13px;color:var(--tekst-sekundær);line-height:1.6}
+.cop-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.for-mot{grid-template-columns:1fr}.garanti-highlight{flex-direction:column;gap:12px}}
+@media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}.garanti-tall{font-size:40px}}
+.myte-boks{background:#fdecea;border:1px solid #f5b7b1;border-radius:var(--radius-lg);padding:16px 18px;margin:20px 0}
+.myte-boks .myte{font-size:14px;font-weight:700;color:#943126;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.myte-boks .fakta{font-size:14px;line-height:1.65;color:var(--tekst-primær);margin:0}
+.scenario-liste{margin:16px 0}
+.scenario{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.scenario-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.scenario-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.scenario-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.info-grad{background:#e8f5f0;border-left:4px solid var(--grønn-mid);border-radius:0 var(--radius) var(--radius) 0;padding:16px 18px;margin:20px 0}
+.info-grad p{font-size:14px;line-height:1.7;color:var(--tekst-primær);margin:0}
+.sjekk-liste{margin:16px 0}
+.sjekk{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.sjekk-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.sjekk-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.sjekk-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.temp-skala{margin:20px 0}
+.temp-rad{display:flex;align-items:center;gap:14px;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px}
+.temp-rad.god{border-color:var(--grønn-mid);background:#f0faf5}
+.temp-rad.middels{border-color:#f0c844;background:#fff8e6}
+.temp-rad.lav{border-color:#f5b7b1;background:#fdecea}
+.temp-grad{font-size:18px;font-weight:700;min-width:64px;text-align:center}
+.temp-rad.god .temp-grad{color:#2d6a0f}
+.temp-rad.middels .temp-grad{color:#946c00}
+.temp-rad.lav .temp-grad{color:#943126}
+.temp-info{flex:1}
+.temp-cop{font-size:14px;font-weight:600;color:var(--sort)}
+.temp-desc{font-size:13px;color:var(--grå-tekst)}
+.temp-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.steg{display:flex;gap:14px;margin-bottom:18px;position:relative}
+.steg:not(:last-child)::after{content:'';position:absolute;left:15px;top:36px;bottom:-10px;width:2px;background:var(--grå-mid)}
+.steg-innhold h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:4px}
+.pris-kort-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.pris-kort{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.pris-kort.fremhevet{border-color:var(--grønn-mid);border-width:2px}
+.pris-kort-topp{padding:14px 16px;background:var(--grå-lys);text-align:center}
+.pris-kort.fremhevet .pris-kort-topp{background:#f0faf5}
+.pris-kort-navn{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:8px}
+.pris-kort-pris{font-size:24px;font-weight:700;color:var(--grønn-mid);line-height:1}
+.pris-kort-enhet{font-size:11px;color:var(--grå-tekst);margin-top:4px}
+.pris-kort-kropp{padding:14px 16px}
+.pris-kort-kropp ul{margin:0;padding-left:16px;font-size:13px;color:var(--tekst-sekundær);line-height:1.7}
+.pris-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.pris-kort-grid{grid-template-columns:1fr}}
+.intervall-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.intervall-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;text-align:center}
+.intervall-kort.ofte{border-color:var(--grønn-mid);background:#f0faf5}
+.intervall-ikon{font-size:28px;margin-bottom:8px}
+.intervall-tid{font-size:18px;font-weight:700;color:var(--grønn-mid);margin-bottom:4px}
+.intervall-hva{font-size:13px;color:var(--tekst-sekundær);line-height:1.5}
+.sjekkliste{background:var(--grå-lys);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 22px;margin:20px 0}
+.sjekkliste h3{margin-top:0!important}
+.sjekkliste-rad{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:14px;color:var(--tekst-primær);line-height:1.5}
+.sjekkliste-rad span{color:var(--grønn-mid);font-weight:700;flex-shrink:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.intervall-grid{grid-template-columns:1fr}}
+.velg-liste{margin:16px 0}
+.velg{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.velg-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.velg-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.velg-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.scop-highlight{background:var(--grønn-mørk);border-radius:var(--radius-lg);padding:24px;margin:20px 0;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.scop-tall{font-size:56px;font-weight:700;color:#a8e6c3;line-height:1;flex-shrink:0}
+.scop-tekst h3{font-size:16px;font-weight:600;color:white;margin-bottom:6px}
+.scop-tekst p{font-size:14px;color:rgba(255,255,255,.7);margin:0;line-height:1.55}
+.modell-kort.top{border-color:#a8e6c3;border-width:2px}
+.modell-kort.top .modell-topp{background:#e8f5f0}
+.tag-scop{background:#0a3d1f;color:#a8e6c3}
+.tag-verdi{background:#e6f1fb;color:#1a4a8a}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.for-mot{grid-template-columns:1fr}.scop-highlight{flex-direction:column;gap:12px}}
+@media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}.scop-tall{font-size:40px}}
+.fordel-kort.inv{border:1px solid var(--grønn-mid);background:#f0faf5}
+.fordel-kort.onoff{border:1px solid var(--grå-mid);background:var(--grå-lys)}
+.fordel-kort.inv .fordel-tittel{color:#2d6a0f}
+.fordel-kort.onoff .fordel-tittel{color:var(--grå-tekst)}
+.fordel-kort.inv .fordel-liste{color:#2d6a0f}
+.fordel-kort.onoff .fordel-liste{color:var(--grå-tekst)}
+.rød-boks { background: #fff0f0; border: 1px solid #ffb3b3; border-radius: var(--radius-lg); padding: 14px 18px; margin: 20px 0; display: flex; gap: 12px; align-items: flex-start; }
+.rød-boks p { font-size: 14px; line-height: 1.65; color: #7a0000; margin: 0; }
+.tabell-wrapper { overflow-x: auto; margin: 20px 0 8px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.data-tabell tr.beste-rad td { background: #eaf5ee; }
+.cop-pill { display: inline-block; background: #eaf3de; color: #2d6a0f; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+.minus-tekst { font-size: 12px; color: #c0392b; margin-top: 3px; }
+.kalkulator-boks { background: var(--grønn-mørk); border-radius: var(--radius-lg); padding: 22px 24px; margin: 24px 0; }
+.steg-liste { margin: 16px 0; }
+.faq-element { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
+.faq-spørsmål { width: 100%; background: var(--hvit); border: none; padding: 15px 18px; text-align: left; font-size: 14px; font-weight: 600; color: var(--sort); cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-ui); transition: background 0.15s; gap: 12px; }
+.faq-spørsmål:hover { background: var(--grå-lys); }
+.faq-svar { padding: 0 18px 15px; font-size: 14px; line-height: 1.7; color: var(--tekst-sekundær); display: none; }
+.faq-svar a { color: var(--grønn-mid); text-decoration: underline; }
+.faq-element.åpen .faq-svar { display: block; }
+.faq-element.åpen .faq-spørsmål { background: var(--grå-lys); }
+.faq-pil { transition: transform 0.2s; font-size: 14px; color: var(--grå-tekst); flex-shrink: 0; }
+.faq-element.åpen .faq-pil { transform: rotate(180deg); }
+.relaterte-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+    }
+.tid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.tid-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;text-align:center}
+.tid-kort.rask{border-color:var(--grønn-mid);background:#f0faf5}
+.tid-ikon{font-size:26px;margin-bottom:8px}
+.tid-type{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:4px}
+.tid-varighet{font-size:18px;font-weight:700;color:var(--grønn-mid)}
+.tid-detalj{font-size:12px;color:var(--grå-tekst);margin-top:4px}
+.plassering-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.plassering-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px}
+.plassering-tittel{font-size:14px;font-weight:700;color:var(--sort);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.plassering-liste{font-size:13px;color:var(--tekst-sekundær);line-height:1.7;padding-left:16px;margin:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.tid-grid{grid-template-columns:1fr}.plassering-grid{grid-template-columns:1fr}}
+.feil-blokk{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px}
+.feil-blokk h3{margin-top:0!important;font-size:15px;font-weight:700;color:var(--sort);display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.feil-blokk .sjekk{font-size:13px;font-weight:600;color:var(--grønn-mørk);margin:10px 0 4px}
+.feil-blokk ul{margin:0 0 0 0!important;padding-left:18px!important}
+.feil-blokk li{font-size:14px!important;line-height:1.6!important;margin-bottom:4px!important}
+.selv-vs-proff{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.svp-kort{border-radius:var(--radius-lg);padding:18px}
+.svp-kort.selv{border:1px solid var(--grønn-mid);background:#f0faf5}
+.svp-kort.proff{border:1px solid #f5b7b1;background:#fdecea}
+.svp-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.svp-kort.selv .svp-tittel{color:#2d6a0f}
+.svp-kort.proff .svp-tittel{color:#943126}
+.svp-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.svp-kort.selv .svp-liste{color:#2d6a0f}
+.svp-kort.proff .svp-liste{color:#943126}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.selv-vs-proff{grid-template-columns:1fr}}
+.storrelse-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.storrelse-kort{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-align:center}
+.storrelse-kort.mid{border-color:var(--grønn-mid);border-width:2px}
+.storrelse-topp{padding:16px;background:var(--grå-lys)}
+.storrelse-kort.mid .storrelse-topp{background:#f0faf5}
+.storrelse-kw{font-size:30px;font-weight:700;color:var(--grønn-mid);line-height:1}
+.storrelse-kw-label{font-size:12px;color:var(--grå-tekst);margin-top:2px}
+.storrelse-kropp{padding:14px 16px}
+.storrelse-areal{font-size:16px;font-weight:600;color:var(--sort);margin-bottom:4px}
+.storrelse-type{font-size:13px;color:var(--grå-tekst)}
+.kw-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.feil-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.feil-kort{border-radius:var(--radius-lg);padding:18px;border:1px solid #f5b7b1;background:#fdecea}
+.feil-tittel{font-size:14px;font-weight:700;color:#943126;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.feil-liste{font-size:13px;color:#943126;line-height:1.7;padding-left:16px;margin:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.storrelse-grid{grid-template-columns:1fr}.feil-grid{grid-template-columns:1fr}}
+.lyd-skala{margin:20px 0}
+.lyd-rad{display:flex;align-items:center;gap:14px;padding:10px 14px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:8px}
+.lyd-rad.fremhevet{border-color:var(--grønn-mid);background:#f0faf5}
+.lyd-db{font-size:20px;font-weight:700;color:var(--grønn-mid);min-width:58px;text-align:center}
+.lyd-navn{font-size:14px;font-weight:600;color:var(--sort)}
+.lyd-beskrivelse{font-size:13px;color:var(--grå-tekst)}
+.db-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.steg-liste{counter-reset:steg;margin:16px 0}
+.steg{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;counter-increment:steg}
+.steg::before{content:counter(steg);width:30px;height:30px;background:var(--grønn-mørk);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0}
+.steg-tekst h4{font-size:15px;font-weight:600;color:var(--sort);margin-bottom:3px}
+.steg-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.65;margin:0}
+.normal-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.normal-kort{border-radius:var(--radius-lg);padding:18px}
+.normal-kort.ok{border:1px solid var(--grønn-mid);background:#f0faf5}
+.normal-kort.problem{border:1px solid #f5b7b1;background:#fdecea}
+.normal-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.normal-kort.ok .normal-tittel{color:#2d6a0f}
+.normal-kort.problem .normal-tittel{color:#943126}
+.normal-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.normal-kort.ok .normal-liste{color:#2d6a0f}
+.normal-kort.problem .normal-liste{color:#943126}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.normal-grid{grid-template-columns:1fr}}
+.dekk-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.dekk-kort{border-radius:var(--radius-lg);padding:18px}
+.dekk-kort.ja{border:1px solid var(--grønn-mid);background:#f0faf5}
+.dekk-kort.nei{border:1px solid #f5b7b1;background:#fdecea}
+.dekk-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dekk-kort.ja .dekk-tittel{color:#2d6a0f}
+.dekk-kort.nei .dekk-tittel{color:#943126}
+.dekk-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.dekk-kort.ja .dekk-liste{color:#2d6a0f}
+.dekk-kort.nei .dekk-liste{color:#943126}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.dekk-grid{grid-template-columns:1fr}}
+.tag-premium{background:#faeeda;color:#854f0b}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.for-mot{grid-template-columns:1fr}}
+.levetid-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
+.levetid-kort{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;text-align:center}
+.levetid-kort.lang{border-color:var(--grønn-mid);border-width:2px}
+.levetid-topp{padding:16px;background:var(--grå-lys)}
+.levetid-kort.lang .levetid-topp{background:#f0faf5}
+.levetid-aar{font-size:28px;font-weight:700;color:var(--grønn-mid);line-height:1}
+.levetid-aar-label{font-size:12px;color:var(--grå-tekst);margin-top:2px}
+.levetid-kropp{padding:14px 16px}
+.levetid-type{font-size:15px;font-weight:600;color:var(--sort);margin-bottom:4px}
+.levetid-note{font-size:12px;color:var(--grå-tekst);line-height:1.5}
+.aar-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.tips-liste{margin:16px 0}
+.tips{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.tips-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tips-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.tips-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.signal-boks{background:#fdecea;border:1px solid #f5b7b1;border-radius:var(--radius-lg);padding:18px 22px;margin:20px 0}
+.signal-boks h3{font-size:14px;font-weight:700;color:#943126;margin:0 0 12px!important}
+.signal-rad{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:14px;color:#943126;line-height:1.5}
+.signal-rad span{flex-shrink:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.levetid-grid{grid-template-columns:1fr}}
+.vs-kort{border-radius:var(--radius-lg);padding:18px}
+.vs-kort.pumpe{border:1px solid var(--grønn-mid);background:#f0faf5}
+.vs-kort.ved{border:1px solid #e0a86a;background:#fdf4e8}
+.vs-tittel{font-size:15px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.vs-kort.pumpe .vs-tittel{color:#2d6a0f}
+.vs-kort.ved .vs-tittel{color:#8a5a1a}
+.vs-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.vs-kort.pumpe .vs-liste{color:#2d6a0f}
+.vs-kort.ved .vs-liste{color:#8a5a1a}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.vs-grid{grid-template-columns:1fr}}
+.vs-kort.vinner{border-color:var(--grønn-mid);background:#f0faf5}
+.vs-tittel{font-size:15px;font-weight:700;color:var(--sort);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.ja-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.nei-pill{display:inline-block;background:#fdecea;color:#943126;font-weight:600;font-size:12px;padding:2px 8px;border-radius:100px}
+.kr-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+/* Sammenligning luft/luft vs luft/vann */
+    .vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.vs-kort { border-radius: var(--radius-lg); padding: 18px; border: 1px solid var(--border); }
+.vs-kort.denne { border-color: var(--grønn-mid); background: #f0faf5; }
+.vs-tittel { font-size: 14px; font-weight: 700; color: var(--sort); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.vs-liste { font-size: 13px; color: var(--tekst-sekundær); line-height: 1.7; padding-left: 16px; margin: 0; }
+/* Pris-tabell */
+    .tabell-wrapper { overflow-x: auto; margin: 20px 0 8px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.data-tabell { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 440px; }
+.kalkulator-verdi { font-weight: 600; color: white; text-align: right; }
+/* Merker */
+    .merke-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+.merke-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+.merke-navn { font-size: 15px; font-weight: 600; color: var(--sort); margin-bottom: 4px; }
+.merke-serie { font-size: 12px; color: var(--grå-tekst); margin-bottom: 8px; }
+.merke-tekst { font-size: 13px; color: var(--tekst-sekundær); line-height: 1.6; }
+.merke-ulempe { font-size: 12px; color: #c0392b; margin-top: 6px; }
+.steg { display: flex; gap: 14px; margin-bottom: 16px; position: relative; }
+.steg:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 36px; bottom: -8px; width: 2px; background: var(--grå-mid); }
+.steg-tall { width: 30px; height: 30px; background: var(--grønn-mørk); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; z-index: 1; margin-top: 2px; }
+/* FAQ */
+    .faq-element { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 8px; overflow: hidden; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .vs-grid { grid-template-columns: 1fr; }
+      .merke-grid { grid-template-columns: 1fr; }
+    }
+.plass-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.plass-kort{border-radius:var(--radius-lg);padding:18px}
+.plass-kort.ja{border:1px solid var(--grønn-mid);background:#f0faf5}
+.plass-kort.nei{border:1px solid #f5b7b1;background:#fdecea}
+.plass-tittel{font-size:14px;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.plass-kort.ja .plass-tittel{color:#2d6a0f}
+.plass-kort.nei .plass-tittel{color:#943126}
+.plass-liste{font-size:13px;line-height:1.7;padding-left:16px;margin:0}
+.plass-kort.ja .plass-liste{color:#2d6a0f}
+.plass-kort.nei .plass-liste{color:#943126}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.plass-grid{grid-template-columns:1fr}}
+.tag-stille{background:#f0e6fb;color:#4a1a8a}
+.formel-boks{background:var(--grønn-mørk);border-radius:var(--radius-lg);padding:24px;margin:20px 0;text-align:center}
+.formel{font-size:20px;font-weight:600;color:white;line-height:1.5;font-family:var(--font-hoved)}
+.formel-uthevet{color:#a8e6c3}
+.formel-forklaring{font-size:13px;color:rgba(255,255,255,.6);margin-top:12px}
+.stor-tall-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.stor-tall-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:20px;text-align:center}
+.stor-tall-kort.cop{border-color:var(--oransje)}
+.stor-tall-kort.scop{border-color:var(--grønn-mid)}
+.stor-tall-merke{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.stor-tall-kort.cop .stor-tall-merke{color:var(--oransje)}
+.stor-tall-kort.scop .stor-tall-merke{color:var(--grønn-mid)}
+.stor-tall-navn{font-size:14px;color:var(--tekst-sekundær);margin-bottom:10px}
+.stor-tall-beskrivelse{font-size:13px;color:var(--tekst-sekundær);line-height:1.6}
+.cop-lav{display:inline-block;background:#fff3ee;color:#b83e00;font-weight:600;font-size:12px;padding:2px 8px;border-radius:100px}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.stor-tall-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}.formel{font-size:16px}}
+.lukt-blokk{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px}
+.lukt-blokk h3{margin-top:0!important;font-size:15px;font-weight:700;color:var(--sort);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.lukt-blokk .arsak{font-size:13px;color:var(--grå-tekst);margin-bottom:8px}
+.lukt-blokk .losning{font-size:14px;line-height:1.65;color:var(--tekst-primær);margin:0}
+.lukt-blokk .losning strong{color:var(--grønn-mørk)}
+.steg-liste{margin:20px 0;counter-reset:steg;padding:0;list-style:none}
+.steg{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;counter-increment:steg}
+.steg::before{content:counter(steg);background:var(--grønn-mørk);color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;font-family:var(--font-ui)}
+.steg-tekst{flex:1}
+.steg-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.steg-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.data-tabell{width:100%;border-collapse:collapse;font-size:14px;min-width:540px}
+.score-pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.kriterie-liste{margin:16px 0}
+.kriterie{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.kriterie-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.kriterie-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.kriterie-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+.frekvens-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:20px 0}
+.frekvens-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;text-align:center}
+.frekvens-kort .ikon{font-size:24px;margin-bottom:6px}
+.frekvens-kort .hva{font-size:13px;font-weight:600;color:var(--sort);margin-bottom:3px}
+.frekvens-kort .nar{font-size:12px;color:var(--grønn-mid);font-weight:700}
+@media(max-width:640px){.artikkel-wrapper{padding:20px 16px}.artikkel-h1{font-size:1.65rem}.artikkel-tekst h2{font-size:1.3rem}.relaterte-grid{grid-template-columns:1fr}.frekvens-grid{grid-template-columns:1fr}}
+/* Vinnerkort */
+    .vinner-kort-stor { border: 2px solid var(--grønn-mid); border-radius: var(--radius-lg); overflow: hidden; margin: 20px 0 28px; }
+.vinner-topp { background: var(--grønn-mørk); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+.vinner-badge-stor { font-size: 11px; font-weight: 700; background: #a8e6c3; color: var(--grønn-mørk); padding: 3px 10px; border-radius: 100px; }
+.vinner-tittel-stor { font-size: 16px; font-weight: 600; color: white; }
+.vinner-kropp { padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.vinner-data h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--grå-tekst); margin-bottom: 6px; }
+.vinner-tall { font-size: 22px; font-weight: 700; color: var(--grønn-mid); }
+.vinner-enhet { font-size: 12px; color: var(--grå-tekst); }
+.vinner-tekst-blokk { font-size: 14px; line-height: 1.65; color: var(--tekst-primær); }
+.vinner-for-mot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 16px 20px; border-top: 1px solid var(--border); background: var(--grå-lys); }
+.for strong, .mot strong { font-size: 12px; font-weight: 700; display: block; margin-bottom: 4px; }
+/* Modell-kort grid */
+    .modell-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 20px 0; }
+.modell-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.modell-topp { padding: 16px 20px 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; background: var(--grå-lys); }
+.modell-info h3 { font-size: 16px; font-weight: 600; color: var(--sort); margin: 0 0 4px; }
+.modell-info .modell-sub { font-size: 13px; color: var(--grå-tekst); }
+.modell-rang { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+.rang-1 { background: #faeeda; color: #854f0b; }
+.rang-2 { background: #f0f0f0; color: #444; }
+.rang-3 { background: #fdf0e0; color: #7a4a1e; }
+.rang-anbefalt { background: #eaf3de; color: #2d6a0f; }
+.rang-budsjett { background: #e6f1fb; color: #1a4a8a; }
+.modell-stats { display: flex; gap: 16px; padding: 12px 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-tall { font-size: 18px; font-weight: 700; color: var(--grønn-mid); line-height: 1; }
+.stat-label { font-size: 11px; color: var(--grå-tekst); margin-top: 2px; }
+.modell-tekst { padding: 14px 20px; font-size: 14px; line-height: 1.65; color: var(--tekst-primær); }
+.modell-for-mot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px 20px 16px; }
+/* Tabell */
+    .tabell-wrapper { overflow-x: auto; margin: 20px 0 8px; border-radius: var(--radius-lg); border: 1px solid var(--border); }
+.cop-ok { display: inline-block; background: #fff3ee; color: #b83e00; font-weight: 600; font-size: 12px; padding: 2px 8px; border-radius: 100px; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .vinner-kropp { grid-template-columns: 1fr; }
+      .modell-for-mot { grid-template-columns: 1fr; }
+      .vinner-for-mot { grid-template-columns: 1fr; }
+    }
+.nei-pill{display:inline-block;background:#fdecea;color:#943126;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.modell-kort.premium{border-color:#f0c844}
+.modell-kort.premium .modell-topp{background:#fff8e6}
+.sjekkliste h3{margin-top:0!important;font-size:14px;font-weight:700;color:var(--grønn-mørk);margin-bottom:12px}
+.rod-flagg{background:#fdecea;border:1px solid #f5b7b1;border-radius:var(--radius-lg);padding:18px 22px;margin:20px 0}
+.rod-flagg h3{margin-top:0!important;font-size:14px;font-weight:700;color:#943126;margin-bottom:12px}
+.rod-flagg-rad{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:14px;color:#943126;line-height:1.5}
+.rod-flagg-rad span{flex-shrink:0}
+.steg { display: flex; gap: 14px; margin-bottom: 18px; position: relative; }
+.steg:not(:last-child)::after { content: ''; position: absolute; left: 15px; top: 36px; bottom: -10px; width: 2px; background: var(--grå-mid); }
+.steg-innhold h4 { font-size: 14px; font-weight: 600; color: var(--sort); margin-bottom: 4px; }
+.sammenligning-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+.samm-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 16px; }
+.samm-kort.denne { border-color: var(--grønn-mid); background: #f0faf5; }
+.samm-tittel { font-size: 14px; font-weight: 700; color: var(--sort); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.samm-liste { font-size: 13px; color: var(--tekst-sekundær); line-height: 1.75; padding-left: 14px; margin: 0; }
+@media (max-width: 900px) {
+      .artikkel-wrapper { grid-template-columns: 1fr; gap: 32px; }
+      .artikkel-sidebar { position: static; display: none; }
+      .sammenligning-grid { grid-template-columns: 1fr; }
+    }
+.innstilling-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.innstilling-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px}
+.innstilling-kort h3{margin-top:0!important;font-size:15px;font-weight:700;color:var(--sort);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.innstilling-kort p{font-size:14px;line-height:1.6;color:var(--tekst-sekundær);margin:0}
+.innstilling-kort .anbefalt{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:#2d6a0f;background:#eaf3de;padding:2px 10px;border-radius:100px}
+.modus-liste{margin:16px 0}
+.modus{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+.modus-ikon{width:36px;height:36px;background:var(--grå-lys);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.modus-tekst h4{font-size:14px;font-weight:600;color:var(--sort);margin-bottom:2px}
+.modus-tekst p{font-size:14px;color:var(--tekst-sekundær);line-height:1.6;margin:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.innstilling-grid{grid-template-columns:1fr}}
+.vs-kort.a{border-color:var(--grønn-mid);background:#f0faf5}
+.vs-kort.b{border-color:#1a4a8a;background:#eef4fb}
+.vs-tittel{font-size:15px;font-weight:700;color:var(--sort);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.vs-pris{font-size:13px;color:var(--grå-tekst);margin-bottom:10px}
+.ja-celle{color:#2d6a0f;font-weight:700}
+.nei-celle{color:#943126;font-weight:600}
+.velg-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+.velg-kort{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px}
+.velg-tittel{font-size:14px;font-weight:700;color:var(--sort);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.velg-liste{font-size:13px;color:var(--tekst-sekundær);line-height:1.7;padding-left:16px;margin:0}
+@media(max-width:900px){.artikkel-wrapper{grid-template-columns:1fr;gap:32px}.artikkel-sidebar{position:static;display:none}.vs-grid,.velg-grid{grid-template-columns:1fr}}
+.data-tabell{width:100%;border-collapse:collapse;font-size:14px;min-width:580px}
+.pill{display:inline-block;background:#eaf3de;color:#2d6a0f;font-weight:700;font-size:12px;padding:2px 8px;border-radius:100px}
+.merke-blokk{border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px;margin-bottom:14px}
+.merke-blokk h3{margin-top:0!important;font-size:16px;font-weight:700;color:var(--sort);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.merke-blokk .styrke{font-size:13px;color:#2d6a0f;font-weight:600;margin-bottom:8px}
+.merke-blokk p{font-size:14px;line-height:1.65;color:var(--tekst-sekundær);margin:0 0 8px}
+.merke-blokk a.les{font-size:13px;font-weight:600;color:var(--oransje);text-decoration:none}
+/* Tips-kort */
+    .tips-liste { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 20px 0; }
+.tips-kort { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+.tips-kort.høy-effekt { border-color: var(--grønn-mid); }
+.tips-topp { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: var(--grå-lys); }
+.tips-kort.høy-effekt .tips-topp { background: #f0faf5; }
+.tips-nummer { width: 32px; height: 32px; border-radius: 50%; background: var(--grønn-mørk); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+.tips-tittel { font-size: 15px; font-weight: 600; color: var(--sort); flex: 1; }
+.tips-effekt-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0; }
+.badge-høy { background: #eaf3de; color: #2d6a0f; }
+.badge-middels { background: #fff3ee; color: #b83e00; }
+.badge-lav { background: var(--grå-mid); color: var(--grå-tekst); }
+.tips-kropp { padding: 14px 18px; }
+.tips-tekst { font-size: 14px; line-height: 1.7; color: var(--tekst-primær); margin-bottom: 10px; }
+.tips-tall-rad { display: flex; gap: 16px; flex-wrap: wrap; }
+.tips-tall-blokk { background: var(--grå-lys); border-radius: var(--radius); padding: 8px 12px; text-align: center; }
+.tips-tall { font-size: 18px; font-weight: 700; color: var(--grønn-mid); line-height: 1; }
+.tips-tall-label { font-size: 11px; color: var(--grå-tekst); margin-top: 2px; }
+/* Strømpris kalkulator */
+    .kalkulator-boks { background: var(--grønn-mørk); border-radius: var(--radius-lg); padding: 22px 24px; margin: 24px 0; }
+@media (max-width: 640px) {
+      .artikkel-wrapper { padding: 20px 16px; }
+      .artikkel-h1 { font-size: 1.65rem; }
+      .artikkel-tekst h2 { font-size: 1.3rem; }
+      .relaterte-grid { grid-template-columns: 1fr; }
+      .tips-tall-rad { flex-direction: column; gap: 8px; }
+    }
