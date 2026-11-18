@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300"><title>Mulig luftvei fra stua til åpent repos</title><rect width="520" height="300" rx="14" fill="#eff6ee"/><g font-family="system-ui,sans-serif" font-size="19" fill="#173c29">
+<text x="24" y="39" font-weight="700">Åpen trapp fra stua</text>
+<path d="M24 64H496V252H24Z M24 154H352 M405 154H496" fill="#fff" stroke="#346e52" stroke-width="4"/>
+<path d="M290 245h18v-20h18v-20h18v-20h18v-20h18v-20h18" fill="none" stroke="#347754" stroke-width="4"/>
+<rect x="52" y="179" width="64" height="23" rx="5" fill="#206145"/>
+<path d="M124 192H256Q338 192 385 117l-2 13m2-13l-14 5" fill="none" stroke="#b85d22" stroke-width="5"/>
+<text x="52" y="130">Rom med egen dør</text><path d="M305 64v90" stroke="#346e52" stroke-width="4"/>
+<text x="345" y="100">Repos</text><text x="53" y="237">Stue</text>
+<text x="24" y="282" font-size="17">Pil viser mulig luftvei, uten beregnet varmemengde.</text></g></svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300"><title>Tre spørsmål for valg av oppvarmingssoner</title><rect width="520" height="300" rx="14" fill="#eff6ee"/><g font-family="system-ui,sans-serif" font-size="19" fill="#173c29">
+<text x="24" y="38" font-weight="700">Fra plantegning til befaring</text>
+<rect x="25" y="58" width="470" height="51" rx="8" fill="#d3e9d5"/>
+<rect x="25" y="130" width="470" height="51" rx="8" fill="#fff" stroke="#46785c"/>
+<rect x="25" y="202" width="470" height="51" rx="8" fill="#f6e4cd"/>
+<path d="M260 109v20m-6-7l6 7 6-7M260 181v20m-6-7l6 7 6-7" fill="none" stroke="#46785c" stroke-width="3"/>
+<text x="43" y="90">1. Hvilke rom skal pumpa varme?</text>
+<text x="43" y="162">2. Hvordan står dørene når rommene brukes?</text>
+<text x="43" y="234">3. Hvor trengs det fortsatt egen varme?</text></g></svg>

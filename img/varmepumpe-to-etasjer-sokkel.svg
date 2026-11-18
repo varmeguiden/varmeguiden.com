@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300"><title>To etasjer med ulikt varmebehov gjennom dagen</title><rect width="520" height="300" rx="14" fill="#eff6ee"/><g font-family="system-ui,sans-serif" font-size="19" fill="#173c29">
+<text x="24" y="38" font-weight="700">Hvilke rom bruker dere mest?</text>
+<rect x="25" y="60" width="470" height="91" rx="9" fill="#d3e9d5" stroke="#46785c" stroke-width="2"/>
+<rect x="25" y="167" width="470" height="92" rx="9" fill="#fff" stroke="#46785c" stroke-width="2"/>
+<path d="M304 60v91M304 167v92" stroke="#46785c" stroke-width="3"/>
+<text x="43" y="96" font-weight="700">Hovedplan</text><text x="43" y="127">Stue og kjøkken</text>
+<text x="322" y="112">Brukes daglig</text>
+<text x="43" y="203" font-weight="700">Sokkel</text><text x="43" y="233">Gjesterom og TV-stue</text>
+<text x="322" y="220">Brukes av og til</text></g></svg>
